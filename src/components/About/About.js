@@ -13,7 +13,7 @@ function About() {
   return (
     <>
       {" "}
-      {/* <Particle /> */}
+      <Particle />
       <Container fluid className="about-section">
         <Container>
           <Row style={{ justifyContent: "center", padding: "10px" }}>
