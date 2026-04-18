@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e3b2d42d.css",
-    "main.js": "/static/js/main.9b4626ae.js",
+    "main.css": "/static/css/main.0d9a7a70.css",
+    "main.js": "/static/js/main.c44b9440.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
     "static/media/avatar_new.png": "/static/media/avatar_new.061dee3e8a22748e54a9.png",
     "static/media/home_main_img.png": "/static/media/home_main_img.2a9111d9dda32b180faa.png",
@@ -10,10 +10,12 @@
     "static/media/suicide.png": "/static/media/suicide.9c86cd7138a398c45fa5.png",
     "static/media/about.png": "/static/media/about.f6de949a5c30331d940b.png",
     "static/media/logo1.png": "/static/media/logo1.58eba09975ecb994bdc6.png",
+    "static/media/bot.gif": "/static/media/bot.6a7799a89e860e62da72.gif",
     "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
     "static/media/Le_Tu_Khoi_Nguyen_Analytics_Engineer.pdf": "/static/media/Le_Tu_Khoi_Nguyen_Analytics_Engineer.da8884364d105c450632.pdf",
     "static/media/blog.png": "/static/media/blog.fb8ab7f271a937d5fc01.png",
     "static/media/chatify.png": "/static/media/chatify.7206044e0b5cdad44726.png",
+    "static/media/loading.gif": "/static/media/loading.00d55e2f9f2438843ed3.gif",
     "static/media/go.svg": "/static/media/go.9a9bf59ea453fc0e3ec82471b0c300ab.svg",
     "static/media/SQL.svg": "/static/media/SQL.7fd9bdcee9744b3b731709f2753c68af.svg",
     "static/media/Mongo.svg": "/static/media/Mongo.2c5a056ee9abf56973ee685904548bb8.svg",
@@ -27,7 +29,6 @@
     "static/media/Python.svg": "/static/media/Python.9daed22c470296a63e19d0d509a1828b.svg",
     "static/media/React.svg": "/static/media/React.fa17b44468fe3c157fc20898567de2b4.svg",
     "static/media/Kafka.svg": "/static/media/Kafka.20c66d87a33f23a9ae9a4551676228e6.svg",
-    "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "static/media/Redis.svg": "/static/media/Redis.ca3be4d5c06fdc721e2c078c75dd59f6.svg",
     "static/media/Java.svg": "/static/media/Java.980d8e77e92511acfefbf2dfdf4336e1.svg",
     "static/media/Node.svg": "/static/media/Node.4ccf66deab4cce38fa6a744e962daa9f.svg",
@@ -42,12 +43,12 @@
     "static/media/MUI.svg": "/static/media/MUI.4cc8e67288fab7f3ae7b7d8449ec35d7.svg",
     "static/media/Haskell.svg": "/static/media/Haskell.084122e02bec646ad186861642137932.svg",
     "static/media/Firebase.svg": "/static/media/Firebase.de3da3a4068963dd30fc0f885f170428.svg",
-    "main.e3b2d42d.css.map": "/static/css/main.e3b2d42d.css.map",
-    "main.9b4626ae.js.map": "/static/js/main.9b4626ae.js.map",
+    "main.0d9a7a70.css.map": "/static/css/main.0d9a7a70.css.map",
+    "main.c44b9440.js.map": "/static/js/main.c44b9440.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3b2d42d.css",
-    "static/js/main.9b4626ae.js"
+    "static/css/main.0d9a7a70.css",
+    "static/js/main.c44b9440.js"
   ]
 }
