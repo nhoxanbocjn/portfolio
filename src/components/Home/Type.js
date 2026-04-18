@@ -9,7 +9,7 @@ function Type() {
           "Data Engineer",
           "Data Analyst",
           "Freelancer",
-          "Automation workflows",
+          "Automation workflow",
         ],
         autoStart: true,
         loop: true,

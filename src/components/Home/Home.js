@@ -19,7 +19,7 @@ function Home() {
   return (
     <section>
       <Container fluid className="home-about-section" id="about">
-        {/* <Particle /> */}
+        <Particle />
         <Container className="home-about-description">
           <Row>
             <Col md={8} className="home-header">
