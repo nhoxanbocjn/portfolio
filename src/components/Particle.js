@@ -5,48 +5,83 @@ function Particle() {
   return (
     <Particles
       id="tsparticles"
-      params={{
+      options={{
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
+        },
+
         particles: {
           number: {
-            value: 160,
+            value: 80,
             density: {
               enable: true,
-              value_area: 1500,
+              area: 2530,
             },
           },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
+
+          color: {
+            value: "#ffffff",
           },
-          move: {
-            direction: "right",
-            speed: 0.05,
+
+          shape: {
+            type: "star",
+            options: {
+              star: {
+                sides: 5,
+              },
+            },
           },
-          size: {
-            value: 1,
-          },
+
           opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+            value: 0.4,
+            random: true,
+          },
+
+          size: {
+            value: 3,
+            random: true,
+          },
+
+          links: {
+            enable: false,
+          },
+
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "bottom",
+            outModes: {
+              default: "out",
             },
           },
         },
+
         interactivity: {
+          detectsOn: "canvas",
           events: {
-            onclick: {
+            onHover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onClick: {
               enable: true,
               mode: "push",
             },
+            resize: true,
           },
           modes: {
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
             push: {
-              particles_nb: 1,
+              quantity: 4,
             },
           },
         },
-        retina_detect: true,
+
+        retinaDetect: true,
       }}
     />
   );

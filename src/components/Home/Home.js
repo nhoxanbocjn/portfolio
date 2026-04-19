@@ -18,31 +18,31 @@ import Tilt from "react-parallax-tilt";
 function Home() {
   return (
     <section>
-      <Container fluid className="home-about-section" id="about">
+      <Container fluid >
         <Particle />
         <Container className="home-about-description">
           <Row>
-            <Col md={8} className="home-header">
-              <h1 style={{ paddingBottom: 15 , textAlign: "center"  }} className="heading">
+            <Col   xs={12} md={8} className="home-header">
+              <h1 style={{ paddingBottom: 10 , textAlign: "center"  }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
-              <h1 className="heading-name" style={{ padding: 15, textAlign: "center" }}>
+              <h1 className="heading-name" style={{ padding: 10, textAlign: "center" }}>
                 I'M
                 <strong className="main-name"> 𝓝𝑮𝓤𝓨𝓔𝓝 𝑳𝓔
 
                 </strong>
               </h1>
 
-              <div style={{ padding: 15, textAlign: "center" }}>
+              <div style={{ padding: 10, textAlign: "center"  }}>
                 <Type  />
               </div>
             </Col>
 
-            <Col md={4} style={{ paddingBottom: 20 }} >
+            <Col  xs={12} md={4} >
               <Tilt>
                 <img
                   src={homeLogo}
@@ -54,8 +54,7 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Home2 />
-
+      <Home2  />
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
