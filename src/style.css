@@ -311,10 +311,12 @@ button:focus {
   }
 }
 
+
 .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
 }
+
 
 /* @media (max-width: 767px) {
   .myAvtar {
@@ -766,4 +768,22 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+
+/* new prompt */
+.prompt {
+  color: #00ff9c;
+  margin-right: 4px;
+}
+
+.cursor-blink {
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

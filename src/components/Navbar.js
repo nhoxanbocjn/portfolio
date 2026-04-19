@@ -15,6 +15,7 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+ import  TypingText  from "./NavType";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -38,9 +39,11 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand"  />
-        </Navbar.Brand>
+      <Navbar.Brand href="/" className="d-flex align-items-center">
+        <span className="prompt">~ </span>
+        <span ><TypingText text="nguy3n_l3" /></span>
+        <span className="cursor-blink">█</span>
+      </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
