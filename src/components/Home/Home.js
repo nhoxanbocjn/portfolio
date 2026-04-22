@@ -32,8 +32,8 @@ function Home() {
 
               <h1 className="heading-name" style={{ padding: 10, textAlign: "center" }}>
                 I'M
-                <strong className="main-name"> 𝓝𝑮𝓤𝓨𝓔𝓝 𝑳𝓔
-
+                <strong className="main-name" style={{ fontStyle: "italic" }}> NGUYEN LE
+                {/* 𝓝𝑮𝓤𝓨𝓔𝓝 𝑳𝓔 */}
                 </strong>
               </h1>
 

@@ -49,7 +49,7 @@ function Particle() {
 
           move: {
             enable: true,
-            speed: 6,
+            speed: 3,
             direction: "bottom",
             outModes: {
               default: "out",

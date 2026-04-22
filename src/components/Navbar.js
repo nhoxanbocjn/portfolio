@@ -98,10 +98,10 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/blog"
+                to="http://blog.nhoxanboc.work/"
                 onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                <ImBlog style={{ marginBottom: "2px" }} /> Knowledge
               </Nav.Link>
             </Nav.Item>
 
