@@ -1,7 +1,12 @@
 import React from "react";
 import Particles from "react-tsparticles";
+import { useTheme } from "../context/ThemeContext";
 
 function Particle() {
+  const theme = useTheme();
+  const starColor = theme === "light" ? "#334155" : "#ffffff";
+  const starOpacity = theme === "light" ? 0.25 : 0.4;
+
   return (
     <Particles
       id="tsparticles"
@@ -21,7 +26,7 @@ function Particle() {
           },
 
           color: {
-            value: "#ffffff",
+            value: starColor,
           },
 
           shape: {
@@ -34,7 +39,7 @@ function Particle() {
           },
 
           opacity: {
-            value: 0.4,
+            value: starOpacity,
             random: true,
           },
 

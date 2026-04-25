@@ -787,3 +787,266 @@ button:focus {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+/* --------- */
+/* Theme Toggle Button */
+/* --------- */
+.theme-btn {
+  font-size: 1.1em !important;
+  padding-top: 10px !important;
+  margin-left: 8px;
+}
+
+.theme-btn-inner {
+  line-height: 1.4em !important;
+  background-color: transparent !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  padding: 0.25rem 0.7rem !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  color: white !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-btn-inner:hover {
+  transform: translateY(-2px) !important;
+  border-color: #15cfe0 !important;
+  color: #15cfe0 !important;
+  background-color: transparent !important;
+}
+
+.theme-btn-inner::after {
+  display: none !important;
+}
+
+/* --------- */
+/* Light Theme */
+/* --------- */
+
+/* Override accent color variable — used by .purple, .blockquote-footer, etc. */
+[data-theme="light"] {
+  --imp-text-color: #0066a8;
+  background-color: #f0f2f8;
+}
+
+[data-theme="light"] .App {
+  background-color: #f0f2f8;
+  color: #1a1a2e;
+}
+
+[data-theme="light"] #preloader {
+  background-color: #f0f2f8;
+}
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #dde0f0;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #8888aa;
+}
+
+/* --------- */
+/* Navbar – light */
+/* --------- */
+[data-theme="light"] .sticky {
+  background-color: rgba(235, 237, 255, 0.97) !important;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 80, 0.12) !important;
+}
+
+[data-theme="light"] .navbar-brand {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .navbar-nav .nav-link {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .navbar-nav .nav-item a::after {
+  background: #0066a8;
+}
+
+[data-theme="light"] .navbar-toggler span {
+  background-color: #1a1a2e !important;
+}
+
+@media (max-width: 767px) {
+  [data-theme="light"] .navbar {
+    background-color: #ebedf8 !important;
+  }
+}
+
+/* Terminal prompt in navbar brand */
+[data-theme="light"] .prompt {
+  color: #16a34a;
+}
+
+[data-theme="light"] .cursor-blink {
+  color: #1a1a2e;
+}
+
+/* Theme toggle button */
+[data-theme="light"] .theme-btn-inner {
+  border-color: rgba(26, 26, 46, 0.3) !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .theme-btn-inner:hover {
+  border-color: #0066a8 !important;
+  color: #0066a8 !important;
+}
+
+/* Fork/star button */
+[data-theme="light"] .fork-btn-inner {
+  background-color: #0066a8 !important;
+}
+
+[data-theme="light"] .fork-btn-inner:hover {
+  background-color: #004f82 !important;
+  border-color: #004f82 !important;
+}
+
+/* --------- */
+/* Home – light */
+/* --------- */
+[data-theme="light"] .home-about-description {
+  color: #1a1a2e !important;
+}
+
+/* Main name heading */
+[data-theme="light"] .main-name {
+  color: #0066a8;
+}
+
+/* Typewriter text */
+[data-theme="light"] .Typewriter__wrapper {
+  color: #0066a8 !important;
+}
+
+[data-theme="light"] .Typewriter__cursor {
+  color: #0066a8 !important;
+}
+
+[data-theme="light"] .home-about-body {
+  color: #2a2a3e;
+}
+
+[data-theme="light"] .home-about-social {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .home-about-social h1 {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .home-social-icons {
+  background: rgba(26, 26, 46, 0.07) !important;
+}
+
+[data-theme="light"] .icon-colour {
+  color: #0066a8 !important;
+}
+
+/* Home "about" intro section */
+[data-theme="light"] .home-about-section {
+  background-color: #e8ecf8 !important;
+}
+
+/* --------- */
+/* About – light */
+/* --------- */
+[data-theme="light"] .about-section {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .quote-card-view {
+  color: #1a1a2e !important;
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .blockquote-footer {
+  color: #0066a8 !important;
+}
+
+[data-theme="light"] .about-activity {
+  color: #2a2a3e;
+}
+
+[data-theme="light"] .tech-icons {
+  color: #1a1a2e;
+  outline: 1.7px solid rgba(0, 102, 168, 0.35) !important;
+  box-shadow: 4px 5px 4px 3px rgba(0, 0, 80, 0.05) !important;
+}
+
+[data-theme="light"] .tech-icons:hover {
+  outline: 2.2px solid rgba(0, 102, 168, 0.75) !important;
+}
+
+[data-theme="light"] .tech-icons-text {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .project-heading {
+  color: #1a1a2e !important;
+}
+
+/* --------- */
+/* Projects – light */
+/* --------- */
+[data-theme="light"] .project-section {
+  background-image: linear-gradient(
+    to bottom left,
+    rgba(220, 225, 255, 0.88),
+    rgba(200, 208, 242, 0.94)
+  ) !important;
+}
+
+[data-theme="light"] .project-card-view {
+  color: #1a1a2e !important;
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  box-shadow: 0 4px 5px 3px rgba(0, 102, 168, 0.22) !important;
+}
+
+[data-theme="light"] .project-card-view:hover {
+  box-shadow: 0 4px 4px 5px rgba(0, 80, 160, 0.35) !important;
+}
+
+[data-theme="light"] .btn-primary {
+  background-color: #0066a8 !important;
+  border-color: #0066a8 !important;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background-color: #004f82 !important;
+  border-color: #004f82 !important;
+}
+
+/* --------- */
+/* Resume – light */
+/* --------- */
+[data-theme="light"] .resume-section {
+  background-image: linear-gradient(
+    to bottom left,
+    rgba(220, 225, 255, 0.88),
+    rgba(200, 208, 242, 0.94)
+  ) !important;
+  color: #1a1a2e !important;
+}
+
+/* --------- */
+/* Footer – light */
+/* --------- */
+[data-theme="light"] .footer {
+  background-color: #d4d8f0;
+}
+
+[data-theme="light"] .footer h3 {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .footer-icons a {
+  color: #1a1a2e !important;
+}

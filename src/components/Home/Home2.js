@@ -13,38 +13,39 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              I’m an Analytics Engineer & Data Analyst passionate about
+              transforming raw data into actionable insights that drive
+              business decisions.
               <br />
               <br />
               I’m proficient in
               <i>
                 <b className="purple">
                   {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
+                  SQL, Python, and Power BI{" "}
                 </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
+              — building dashboards, data pipelines, and analytical solutions
+              at scale.
               <br />
               <br />
-              My key areas of interest include developing
+              My key areas of interest include
               <i>
                 <b className="purple">
                   {" "}
-                  Web Applications, Blockchain Solutions,{" "}
+                  Data Engineering, Business Intelligence,{" "}
                 </b>
               </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              and building reliable ETL/ELT workflows with tools like{" "}
+              <b className="purple">Airflow</b>,{" "}
+              <b className="purple">Dagster</b>, and{" "}
+              <b className="purple">dbt</b>.
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
-              <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
-              </i>
+              Currently working as a Data Analyst at{" "}
+              <b className="purple">ShopeePay Digital Wallet</b>, delivering
+              data-driven value in fintech — from pipeline automation to A/B
+              testing and customer segmentation.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

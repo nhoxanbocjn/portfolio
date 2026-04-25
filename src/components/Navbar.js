@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo1.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
+import { BsSun, BsMoon } from "react-icons/bs";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -15,9 +15,9 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
- import  TypingText  from "./NavType";
+import TypingText from "./NavType";
 
-function NavBar() {
+function NavBar({ theme, toggleTheme }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
@@ -113,6 +113,20 @@ function NavBar() {
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
                 <AiFillStar style={{ fontSize: "1.1em" }} />
+              </Button>
+            </Nav.Item>
+
+            <Nav.Item className="theme-btn">
+              <Button
+                onClick={toggleTheme}
+                className="theme-btn-inner"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <BsSun style={{ fontSize: "1.2em" }} />
+                ) : (
+                  <BsMoon style={{ fontSize: "1.2em" }} />
+                )}
               </Button>
             </Nav.Item>
           </Nav>

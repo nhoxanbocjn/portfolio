@@ -8,37 +8,41 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Nhoxanboc</span>{" "}
-            from <span className="purple">Bhubaneswar, India</span>.
+            Hi everyone! I’m{" "}
+            <span className="purple">Le Tu Khoi Nguyen</span> from{" "}
+            <span className="purple">Ho Chi Minh City, Vietnam</span>.
             <br />
             I’m currently working as a{" "}
-            <span className="purple">Software Developer</span> at{" "}
-            <span className="purple">Juspay</span>.
-            <br />I hold an Integrated M.Sc. (IMSc) in{" "}
-            <span className="purple">Mathematics and Computing</span> from{" "}
-            <span className="purple">BIT Mesra</span>.
+            <span className="purple">Data Analyst</span> at{" "}
+            <span className="purple">ShopeePay</span>.
+            <br />I hold a Bachelor of{" "}
+            <span className="purple">Management Information System</span> from{" "}
+            <span className="purple">
+              University of Economics Ho Chi Minh City (UEH)
+            </span>{" "}
+            — GPA: <span className="purple">3.73 / 4.0</span>.
             <br />
             <br />
-            Outside of coding, I love engaging in activities that keep me
-            creative and inspired:
+            Outside of data, I love engaging in activities that keep me sharp
+            and curious:
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games 🎮
+              <ImPointRight /> Exploring Data & Building Pipelines
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs ✍️
+              <ImPointRight /> Playing Games & Sports
             </li>
             <li className="about-activity">
-              <ImPointRight /> Traveling and Exploring New Places 🌍
+              <ImPointRight /> Traveling and Discovering New Places
             </li>
           </ul>
 
-          <p style={{ color: '#15cfe0' }}>
-            "Strive to build things that make a difference!"{" "}
+          <p className="purple">
+            "Turn data into decisions that matter!"{" "}
           </p>
-          <footer className="blockquote-footer">Nhoxanboc</footer>
+          <footer className="blockquote-footer">Le Tu Khoi Nguyen</footer>
         </blockquote>
       </Card.Body>
     </Card>

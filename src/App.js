@@ -17,12 +17,14 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Blog from "./components/Blog/Blog";
+import { ThemeContext } from "./context/ThemeContext";
 
 // Inside your <Routes>:
 
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -32,11 +34,18 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("theme", next);
+  };
+
   return (
+    <ThemeContext.Provider value={theme}>
     <Router>
       <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+      <div className="App" data-theme={theme} id={load ? "no-scroll" : "scroll"}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -49,6 +58,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ThemeContext.Provider>
   );
 }
 
