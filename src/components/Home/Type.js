@@ -6,11 +6,11 @@ function Type() {
     <Typewriter
       options={{
         strings: [
+          "Data Engineer",
           "Data Analyst",
-          "Analytics Engineer",
-          "SQL Developer",
-          "ETL / ELT Developer",
+          "Freelancer",
           "BI Developer",
+          "ETL / ELT Developer",
         ],
         autoStart: true,
         loop: true,

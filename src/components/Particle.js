@@ -4,8 +4,8 @@ import { useTheme } from "../context/ThemeContext";
 
 function Particle() {
   const theme = useTheme();
-  const starColor = theme === "light" ? "#334155" : "#ffffff";
-  const starOpacity = theme === "light" ? 0.25 : 0.4;
+  const starColor = theme === "light" ? "#000000" : "#ffffff";
+  const starOpacity = theme === "light" ? 0.2 : 0.4;
 
   return (
     <Particles

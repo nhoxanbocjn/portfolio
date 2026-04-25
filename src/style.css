@@ -949,18 +949,19 @@ button:focus {
   color: #0066a8 !important;
 }
 
-/* Home "about" intro section */
-[data-theme="light"] .home-about-section {
-  background-color: #e8ecf8 !important;
+/* Unified page background – same color on ALL pages */
+[data-theme="light"] .home-about-section,
+[data-theme="light"] .about-section,
+[data-theme="light"] .project-section,
+[data-theme="light"] .resume-section {
+  background-color: #f0f2f8 !important;
+  background-image: none !important;
+  color: #1a1a2e !important;
 }
 
 /* --------- */
 /* About – light */
 /* --------- */
-[data-theme="light"] .about-section {
-  color: #1a1a2e !important;
-}
-
 [data-theme="light"] .quote-card-view {
   color: #1a1a2e !important;
   background-color: rgba(255, 255, 255, 0.65) !important;
@@ -996,14 +997,6 @@ button:focus {
 /* --------- */
 /* Projects – light */
 /* --------- */
-[data-theme="light"] .project-section {
-  background-image: linear-gradient(
-    to bottom left,
-    rgba(220, 225, 255, 0.88),
-    rgba(200, 208, 242, 0.94)
-  ) !important;
-}
-
 [data-theme="light"] .project-card-view {
   color: #1a1a2e !important;
   background-color: rgba(255, 255, 255, 0.88) !important;
@@ -1022,18 +1015,6 @@ button:focus {
 [data-theme="light"] .btn-primary:hover {
   background-color: #004f82 !important;
   border-color: #004f82 !important;
-}
-
-/* --------- */
-/* Resume – light */
-/* --------- */
-[data-theme="light"] .resume-section {
-  background-image: linear-gradient(
-    to bottom left,
-    rgba(220, 225, 255, 0.88),
-    rgba(200, 208, 242, 0.94)
-  ) !important;
-  color: #1a1a2e !important;
 }
 
 /* --------- */
