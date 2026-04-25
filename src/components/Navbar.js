@@ -128,7 +128,9 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 className="lang-btn-inner"
                 aria-label="Toggle language"
               >
-                {lang === "en" ? "VI" : "EN"}
+                <span className={lang === "en" ? "lang-active" : "lang-inactive"}>EN</span>
+                <span className="lang-sep"> | </span>
+                <span className={lang === "vi" ? "lang-active" : "lang-inactive"}>VI</span>
               </Button>
             </Nav.Item>
           </Nav>

@@ -789,41 +789,83 @@ button:focus {
 }
 
 /* --------- */
-/* Theme & Lang Toggle Buttons */
+/* Theme Toggle Button */
 /* --------- */
-.theme-btn,
-.lang-btn {
+.theme-btn {
   font-size: 1.1em !important;
   padding-top: 10px !important;
   margin-left: 4px;
 }
 
-.theme-btn-inner,
-.lang-btn-inner {
+.theme-btn-inner {
   line-height: 1.4em !important;
   background-color: transparent !important;
   border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  padding: 0.25rem 0.65rem !important;
+  padding: 0.25rem 0.7rem !important;
   vertical-align: middle !important;
   text-align: center !important;
   color: white !important;
   border-radius: 8px !important;
   transition: all 0.3s ease !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.3px;
 }
 
-.theme-btn-inner:hover,
-.lang-btn-inner:hover {
+.theme-btn-inner:hover {
   transform: translateY(-2px) !important;
   border-color: #15cfe0 !important;
   color: #15cfe0 !important;
   background-color: transparent !important;
 }
 
-.theme-btn-inner::after,
+.theme-btn-inner::after {
+  display: none !important;
+}
+
+/* --------- */
+/* Language Toggle Button */
+/* --------- */
+.lang-btn {
+  font-size: 1.1em !important;
+  padding-top: 10px !important;
+  margin-left: 4px;
+}
+
+.lang-btn-inner {
+  background-color: transparent !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  padding: 0.18rem 0.6rem !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  color: white !important;
+  border-radius: 20px !important;
+  transition: border-color 0.3s ease !important;
+  font-size: 0.78em !important;
+  letter-spacing: 0.6px;
+  line-height: 1.6em !important;
+}
+
+.lang-btn-inner:hover {
+  border-color: #15cfe0 !important;
+  background-color: transparent !important;
+  transform: none !important;
+}
+
 .lang-btn-inner::after {
   display: none !important;
+}
+
+.lang-active {
+  color: #15cfe0;
+  font-weight: 700;
+}
+
+.lang-inactive {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+}
+
+.lang-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
 }
 
 /* Project subtext */
@@ -899,17 +941,43 @@ button:focus {
   color: #1a1a2e;
 }
 
-/* Theme toggle button */
-[data-theme="light"] .theme-btn-inner,
-[data-theme="light"] .lang-btn-inner {
-  border-color: rgba(26, 26, 46, 0.3) !important;
-  color: #1a1a2e !important;
+/* Theme toggle button – teal fill in light mode */
+[data-theme="light"] .theme-btn-inner {
+  background-color: #0d9488 !important;
+  border-color: #0d9488 !important;
+  color: #ffffff !important;
 }
 
-[data-theme="light"] .theme-btn-inner:hover,
+[data-theme="light"] .theme-btn-inner:hover {
+  background-color: #0f766e !important;
+  border-color: #0f766e !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Lang toggle button – teal fill in light mode */
+[data-theme="light"] .lang-btn-inner {
+  background-color: #0d9488 !important;
+  border-color: #0d9488 !important;
+  color: #ffffff !important;
+}
+
 [data-theme="light"] .lang-btn-inner:hover {
-  border-color: #0066a8 !important;
-  color: #0066a8 !important;
+  background-color: #0f766e !important;
+  border-color: #0f766e !important;
+}
+
+[data-theme="light"] .lang-active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+[data-theme="light"] .lang-inactive {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .lang-sep {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 [data-theme="light"] .project-subtext {
