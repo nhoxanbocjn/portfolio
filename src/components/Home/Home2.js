@@ -2,50 +2,48 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/home_main_img.png";
 import Tilt from "react-parallax-tilt";
+import { useLang } from "../../context/LangContext";
+import translations from "../../translations";
 
 function Home2() {
+  const lang = useLang();
+  const t = translations[lang].home2;
+
   return (
-    <Container fluid className="home-about-section pt-0" id="about" >
+    <Container fluid className="home-about-section pt-0" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description pt-0">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              {t.headingPre}{" "}
+              <span className="purple">{t.headingPurple} </span>
+              {t.headingPost}
             </h1>
             <p className="home-about-body">
-              I’m an Analytics Engineer & Data Analyst passionate about
-              transforming raw data into actionable insights that drive
-              business decisions.
+              {t.intro}
               <br />
               <br />
-              I’m proficient in
+              {t.skillsPrefix}
               <i>
-                <b className="purple">
-                  {" "}
-                  SQL, Python, and Power BI{" "}
-                </b>
+                <b className="purple"> {t.skillsBold} </b>
               </i>
-              — building dashboards, data pipelines, and analytical solutions
-              at scale.
+              {t.skillsSuffix}
               <br />
               <br />
-              My key areas of interest include
+              {t.interestsPrefix}
               <i>
-                <b className="purple">
-                  {" "}
-                  Data Engineering, Business Intelligence,{" "}
-                </b>
+                <b className="purple"> {t.interestsBold} </b>
               </i>
-              and building reliable ETL/ELT workflows with tools like{" "}
+              {t.interestsSuffix}{" "}
               <b className="purple">Airflow</b>,{" "}
               <b className="purple">Dagster</b>, and{" "}
               <b className="purple">dbt</b>.
               <br />
               <br />
-              Currently working as a Data Analyst at{" "}
-              <b className="purple">ShopeePay Digital Wallet</b>, delivering
-              data-driven value in fintech — from pipeline automation to A/B
-              testing and customer segmentation.
+              {t.currentPrefix}{" "}
+              <b className="purple">{t.currentRole}</b> {t.currentAt}{" "}
+              <b className="purple">{t.currentCompany}</b>
+              {t.currentSuffix}
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -58,4 +56,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;

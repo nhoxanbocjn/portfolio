@@ -4,22 +4,23 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import { BsSun, BsMoon } from "react-icons/bs";
 import {
-  AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
 import TypingText from "./NavType";
+import { useLang } from "../context/LangContext";
+import translations from "../translations";
 
-function NavBar({ theme, toggleTheme }) {
+function NavBar({ theme, toggleTheme, lang, toggleLang }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const currentLang = useLang();
+  const t = translations[currentLang].nav;
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -39,11 +40,13 @@ function NavBar({ theme, toggleTheme }) {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-      <Navbar.Brand href="/" className="d-flex align-items-center">
-        <span className="prompt">~ </span>
-        <span ><TypingText text="nguy3n_l3" /></span>
-        <span className="cursor-blink">█</span>
-      </Navbar.Brand>
+        <Navbar.Brand href="/" className="d-flex align-items-center">
+          <span className="prompt">~ </span>
+          <span>
+            <TypingText text="nguy3n_l3" />
+          </span>
+          <span className="cursor-blink">█</span>
+        </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -58,7 +61,7 @@ function NavBar({ theme, toggleTheme }) {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t.home}
               </Nav.Link>
             </Nav.Item>
 
@@ -68,7 +71,7 @@ function NavBar({ theme, toggleTheme }) {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> {t.about}
               </Nav.Link>
             </Nav.Item>
 
@@ -81,7 +84,7 @@ function NavBar({ theme, toggleTheme }) {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Projects
+                {t.projects}
               </Nav.Link>
             </Nav.Item>
 
@@ -91,7 +94,7 @@ function NavBar({ theme, toggleTheme }) {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ marginBottom: "2px" }} /> {t.resume}
               </Nav.Link>
             </Nav.Item>
 
@@ -101,19 +104,8 @@ function NavBar({ theme, toggleTheme }) {
                 to="http://blog.nhoxanboc.work/"
                 onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Knowledge
+                <ImBlog style={{ marginBottom: "2px" }} /> {t.knowledge}
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/nhoxanboc4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
             </Nav.Item>
 
             <Nav.Item className="theme-btn">
@@ -127,6 +119,16 @@ function NavBar({ theme, toggleTheme }) {
                 ) : (
                   <BsMoon style={{ fontSize: "1.2em" }} />
                 )}
+              </Button>
+            </Nav.Item>
+
+            <Nav.Item className="lang-btn">
+              <Button
+                onClick={toggleLang}
+                className="lang-btn-inner"
+                aria-label="Toggle language"
+              >
+                {lang === "en" ? "VI" : "EN"}
               </Button>
             </Nav.Item>
           </Nav>

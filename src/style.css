@@ -789,35 +789,47 @@ button:focus {
 }
 
 /* --------- */
-/* Theme Toggle Button */
+/* Theme & Lang Toggle Buttons */
 /* --------- */
-.theme-btn {
+.theme-btn,
+.lang-btn {
   font-size: 1.1em !important;
   padding-top: 10px !important;
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
-.theme-btn-inner {
+.theme-btn-inner,
+.lang-btn-inner {
   line-height: 1.4em !important;
   background-color: transparent !important;
   border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  padding: 0.25rem 0.7rem !important;
+  padding: 0.25rem 0.65rem !important;
   vertical-align: middle !important;
   text-align: center !important;
   color: white !important;
   border-radius: 8px !important;
   transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
 }
 
-.theme-btn-inner:hover {
+.theme-btn-inner:hover,
+.lang-btn-inner:hover {
   transform: translateY(-2px) !important;
   border-color: #15cfe0 !important;
   color: #15cfe0 !important;
   background-color: transparent !important;
 }
 
-.theme-btn-inner::after {
+.theme-btn-inner::after,
+.lang-btn-inner::after {
   display: none !important;
+}
+
+/* Project subtext */
+.project-subtext {
+  color: white;
+  margin-bottom: 8px;
 }
 
 /* --------- */
@@ -888,14 +900,20 @@ button:focus {
 }
 
 /* Theme toggle button */
-[data-theme="light"] .theme-btn-inner {
+[data-theme="light"] .theme-btn-inner,
+[data-theme="light"] .lang-btn-inner {
   border-color: rgba(26, 26, 46, 0.3) !important;
   color: #1a1a2e !important;
 }
 
-[data-theme="light"] .theme-btn-inner:hover {
+[data-theme="light"] .theme-btn-inner:hover,
+[data-theme="light"] .lang-btn-inner:hover {
   border-color: #0066a8 !important;
   color: #0066a8 !important;
+}
+
+[data-theme="light"] .project-subtext {
+  color: #2a2a3e;
 }
 
 /* Fork/star button */
