@@ -8,6 +8,11 @@ import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
 import suicide from "../../Assets/Projects/suicide.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
+import {
+  SiApacheairflow,
+  SiPowerbi,
+  SiPandas,
+} from "react-icons/si";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
@@ -87,6 +92,43 @@ function Projects() {
               ghLink="https://github.com/nhoxanboc4419/Face_And_Emotion_Detection"
             />
           </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              headerIcon={<SiApacheairflow />}
+              headerColor="linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)"
+              isBlog={false}
+              title="Sales Data Pipeline"
+              description="End-to-end ETL pipeline ingesting sales transactions from multiple sources into a PostgreSQL data warehouse. DAGs orchestrated with Apache Airflow, transformations handled by dbt models with built-in data quality tests and documentation."
+              ghLink="https://github.com/nhoxanbocjn"
+              techStack={["Python", "Airflow", "PostgreSQL", "SQL"]}
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              headerIcon={<SiPowerbi />}
+              headerColor="linear-gradient(135deg, #1a0a00 0%, #3d1f00 100%)"
+              isBlog={false}
+              title="Business Intelligence Dashboard"
+              description="Interactive Power BI dashboard tracking revenue, conversion rate, customer cohorts, and funnel analysis. Connected to a PostgreSQL DWH with row-level security per region. Reduced weekly reporting effort from 4 hours to fully automated."
+              ghLink="https://github.com/nhoxanbocjn"
+              techStack={["Power BI", "DAX", "SQL", "PostgreSQL"]}
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              headerIcon={<SiPandas />}
+              headerColor="linear-gradient(135deg, #0a0a2e 0%, #150e5e 100%)"
+              isBlog={false}
+              title="Customer Segmentation (RFM)"
+              description="RFM segmentation of 1M+ customer records using Python and pandas to identify high-value, at-risk, and churned segments. Clusters visualised in Metabase with automated weekly refresh via scheduled Python job."
+              ghLink="https://github.com/nhoxanbocjn"
+              techStack={["Python", "Pandas", "SQL", "Metabase"]}
+            />
+          </Col>
+
         </Row>
       </Container>
     </Container>

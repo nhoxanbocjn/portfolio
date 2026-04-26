@@ -7,23 +7,36 @@ import { BsGithub } from "react-icons/bs";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      {props.imgPath ? (
+        <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      ) : (
+        <div
+          className="project-card-icon-header"
+          style={{ background: props.headerColor || "linear-gradient(135deg, #1a1a2e, #16213e)" }}
+        >
+          {props.headerIcon}
+        </div>
+      )}
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        <Button   variant="primary" href={props.ghLink} target="_blank"   className="project-card-buttons">
+        {props.techStack && props.techStack.length > 0 && (
+          <div className="project-tech-stack">
+            {props.techStack.map((tech, i) => (
+              <span key={i} className="tech-badge">{tech}</span>
+            ))}
+          </div>
+        )}
+        <Button variant="primary" href={props.ghLink} target="_blank" className="project-card-buttons">
           <BsGithub /> &nbsp;
           {props.isBlog ? "Blog" : "GitHub"}
         </Button>
         {"\n"}
         {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
         {!props.isBlog && props.demoLink && (
-          <Button 
+          <Button
             className="project-card-buttons"
             variant="primary"
             href={props.demoLink}

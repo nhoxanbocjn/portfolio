@@ -482,13 +482,46 @@ button:focus {
 }
 
 .project-card-buttons {
-  bottom  : 1%;         
+  bottom  : 1%;
 
-  justify-content: center;   
+  justify-content: center;
   gap: 16px;
 }
 
-.blog-card {  
+.project-card-icon-header {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 4px 4px 0 0;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tech-badge {
+  background-color: rgba(21, 207, 224, 0.15);
+  color: #15cfe0;
+  border: 1px solid rgba(21, 207, 224, 0.4);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+[data-theme="light"] .tech-badge {
+  background-color: rgba(0, 102, 168, 0.1);
+  color: #0066a8;
+  border-color: rgba(0, 102, 168, 0.35);
+}
+
+.blog-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;
   padding-left: 25px !important;
