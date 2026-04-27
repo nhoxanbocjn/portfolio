@@ -37,16 +37,34 @@ Open [http://localhost:3000](http://localhost:3000).
 | Job title typewriter strings | `src/components/Home/Type.js` |
 | Skill icons | `src/components/About/Techstack.js` |
 | Tool icons | `src/components/About/Toolstack.js` |
-| Project cards | `src/components/Projects/Projects.js` |
+| Project cards (icons, colors, links) | `src/components/Projects/Projects.js` |
+| Project cards (titles, descriptions) | `src/translations/index.js` → `projects.cards[]` |
 | Resume PDF | Replace `src/Assets/CV.PDF` |
 | Blog posts & knowledge graph | `src/components/Blog/Blog.js` |
 | Avatar image | Replace `src/Assets/home_main_img.png` |
 
-### 3. Theming
+### 3. Adding a second language (EN/VI built in)
 
-Dark mode is the default. All light-mode overrides are `[data-theme="light"]` blocks at the bottom of `src/style.css`. The accent colour is controlled by `--imp-text-color` — change it in the `:root` block and the light-mode override to restyle the whole site.
+Text is managed in `src/translations/index.js`. To add or update strings:
 
-### 4. Deploy
+1. Add the new key + value to the `en` block
+2. Add your DeepL Free API key to `.env`:
+   ```
+   DEEPL_API_KEY=your_key_here
+   ```
+3. Run the auto-translate script:
+   ```bash
+   node scripts/translate.js          # fills only missing VI strings
+   node scripts/translate.js --force  # retranslates everything
+   ```
+
+Get a free DeepL key at [deepl.com/pro#developer](https://www.deepl.com/pro#developer) — 500k characters/month free, no credit card, hard stops at the limit (no surprise charges).
+
+### 4. Theming
+
+Dark mode is the default. All light-mode overrides are `[data-theme="light"]` blocks at the bottom of `src/style.css`. The accent colour is controlled by `--imp-text-color` — change it in the `:root` block and the light-mode override to restyle the whole site. Use the `.accent` class for accent-coloured text in JSX.
+
+### 5. Deploy
 
 Push to GitHub and connect the repo to [Vercel](https://vercel.com). Every push to `main` auto-deploys.
 
@@ -60,7 +78,7 @@ Push to GitHub and connect the repo to [Vercel](https://vercel.com). Every push 
 src/
 ├── components/
 │   ├── Home/       # Hero section + intro
-│   ├── About/      # Bio card, skill icons, tool icons
+│   ├── About/      # Bio card, skill icons, tool icons, GitHub calendar
 │   ├── Projects/   # Project cards
 │   ├── Resume/     # PDF viewer
 │   └── Blog/       # Knowledge graph + markdown reader
@@ -68,6 +86,8 @@ src/
 ├── translations/   # EN / VI string maps (index.js)
 ├── Assets/         # Images and CV.PDF
 └── style.css       # All styles
+scripts/
+└── translate.js    # DeepL auto-translate EN → VI
 ```
 
 ---
