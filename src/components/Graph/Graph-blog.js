@@ -229,7 +229,7 @@ function GraphBlog() {
       ) : (
         <>
           <h1 style={{ textAlign: "center", marginBottom: "10px" }}>
-            Knowledge <span className="purple">Graph</span>
+            Knowledge <span className="accent">Graph</span>
           </h1>
           <p style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", marginBottom: "20px", fontSize: "14px" }}>
             Drag nodes freely · Click green nodes to read blog posts

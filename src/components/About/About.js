@@ -8,7 +8,7 @@ import Toolstack from "./Toolstack";
 import Tilt from "react-parallax-tilt";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
-
+import Github from "./Github";
 function About() {
   const lang = useLang();
   const t = translations[lang].about;
@@ -33,7 +33,7 @@ function About() {
                 id="about"
               >
                 {t.title}{" "}
-                <strong className="purple">{t.titlePurple}</strong>
+                <strong className="accent">{t.titlePurple}</strong>
               </h1>
               <Aboutcard />
             </Col>
@@ -49,16 +49,17 @@ function About() {
           </Row>
           <h1 className="project-heading">
             {t.skillsTitle}{" "}
-            <strong className="purple">{t.skillsTitlePurple} </strong>
+            <strong className="accent">{t.skillsTitlePurple} </strong>
           </h1>
 
           <Techstack />
 
           <h1 className="project-heading">
-            <strong className="purple">{t.toolsTitle}</strong>{" "}
+            <strong className="accent">{t.toolsTitle}</strong>{" "}
             {t.toolsTitlePurple}
           </h1>
           <Toolstack />
+          <Github />
         </Container>
       </Container>
     

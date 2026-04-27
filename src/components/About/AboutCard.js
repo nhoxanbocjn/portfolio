@@ -14,17 +14,17 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
             {t.greeting}{" "}
-            <span className="purple">Nguyen Le</span> {t.from}{" "}
-            <span className="purple">Ho Chi Minh City, Vietnam</span>.
+            <span className="accent">Nguyen Le</span> {t.from}{" "}
+            <span className="accent">Ho Chi Minh City, Vietnam</span>.
             <br />
             {t.workPrefix}{" "}
-            <span className="purple">{t.workRole}</span> {t.workAt}{" "}
-            <span className="purple">ShopeePay</span>.
+            <span className="accent">{t.workRole}</span> {t.workAt}{" "}
+            <span className="accent">ShopeePay</span>.
             <br />
             {t.eduPrefix}{" "}
-            <span className="purple">{t.eduDegree}</span> {t.eduFrom}{" "}
-            <span className="purple">{t.eduSchool}</span> — GPA:{" "}
-            <span className="purple">{t.gpa}</span>.
+            <span className="accent">{t.eduDegree}</span> {t.eduFrom}{" "}
+            <span className="accent">{t.eduSchool}</span> — GPA:{" "}
+            <span className="accent">{t.gpa}</span>.
             <br />
             <br />
             {t.hobbiesIntro}
@@ -38,7 +38,7 @@ function AboutCard() {
             ))}
           </ul>
 
-          <p className="purple">{t.quote}</p>
+          <p className="accent">{t.quote}</p>
           <footer className="blockquote-footer">{t.author}</footer>
         </blockquote>
       </Card.Body>

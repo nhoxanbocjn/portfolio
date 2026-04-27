@@ -16,7 +16,7 @@ function Home2() {
           <Col md={8} className="home-about-description pt-0">
             <h1 style={{ fontSize: "2.6em" }}>
               {t.headingPre}{" "}
-              <span className="purple">{t.headingPurple} </span>
+              <span className="accent">{t.headingPurple} </span>
               {t.headingPost}
             </h1>
             <p className="home-about-body">
@@ -24,21 +24,21 @@ function Home2() {
               <br />
               <br />
               {t.skillsPrefix}
-              <b className="purple"> {t.skillsBold} </b>
+              <b className="accent"> {t.skillsBold} </b>
               {t.skillsSuffix}
               <br />
               <br />
               {t.interestsPrefix}
-              <b className="purple"> {t.interestsBold} </b>
+              <b className="accent"> {t.interestsBold} </b>
               {t.interestsSuffix}{" "}
-              <b className="purple">Airflow</b>,{" "}
-              <b className="purple">Dagster</b>, and{" "}
-              <b className="purple">dbt</b>.
+              <b className="accent">Airflow</b>,{" "}
+              <b className="accent">Dagster</b>, and{" "}
+              <b className="accent">dbt</b>.
               <br />
               <br />
               {t.currentPrefix}{" "}
-              <b className="purple">{t.currentRole}</b> {t.currentAt}{" "}
-              <b className="purple">{t.currentCompany}</b>
+              <b className="accent">{t.currentRole}</b> {t.currentAt}{" "}
+              <b className="accent">{t.currentCompany}</b>
               {t.currentSuffix}
             </p>
           </Col>

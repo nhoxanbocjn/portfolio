@@ -19,7 +19,7 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          {t.heading} <strong className="purple">{t.headingPurple} </strong>
+          {t.heading} <strong className="accent">{t.headingPurple} </strong>
         </h1>
         <p className="project-subtext">{t.subtext}</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -92,12 +92,10 @@ function Projects() {
               headerIcon={<SiApacheairflow />}
               headerColor="linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)"
               isBlog={false}
-              title="Sales Data Pipeline"
-              description="End-to-end ETL pipeline ingesting sales transactions from multiple sources into a PostgreSQL data warehouse. DAGs orchestrated with Apache Airflow, transformations handled by dbt models with built-in data quality tests and documentation."
+              title={t.cards[0].title}
+              description={t.cards[0].description}
               ghLink="https://github.com/nhoxanbocjn"
               techStack={["Python", "Airflow", "PostgreSQL"]}
-              // demoLink="https://plant49-ai.herokuapp.com/"
-
             />
           </Col>
 
@@ -106,10 +104,10 @@ function Projects() {
               headerIcon={<SiPowerbi />}
               headerColor="linear-gradient(135deg, #1a0a00 0%, #3d1f00 100%)"
               isBlog={false}
-              title="Business Intelligence Dashboard"
-              description="Interactive Power BI dashboard tracking revenue, conversion rate, customer cohorts, and funnel analysis. Connected to a PostgreSQL DWH with row-level security per region. Reduced weekly reporting effort from 4 hours to fully automated."
+              title={t.cards[1].title}
+              description={t.cards[1].description}
               ghLink="https://github.com/nhoxanbocjn"
-              techStack={["Power BI", "DAX","PBI service", "PostgreSQL"]}
+              techStack={["Power BI", "DAX", "PBI service", "PostgreSQL"]}
             />
           </Col>
 
@@ -118,8 +116,8 @@ function Projects() {
               headerIcon={<SiPandas />}
               headerColor="linear-gradient(135deg, #0a0a2e 0%, #150e5e 100%)"
               isBlog={false}
-              title="Customer Segmentation (RFM)"
-              description="RFM segmentation of 1M+ customer records using Python and pandas to identify high-value, at-risk, and churned segments. Clusters visualised in Metabase with automated weekly refresh via scheduled Python job."
+              title={t.cards[2].title}
+              description={t.cards[2].description}
               ghLink="https://github.com/nhoxanbocjn"
               techStack={["Python", "Pandas", "MS SQL", "Metabase"]}
             />

@@ -228,7 +228,7 @@ function Blog() {
       ) : (
         <Container>
           <h1 style={{ textAlign: "center", color: "white", marginBottom: "10px" }}>
-            Knowledge <span className="purple">Graph</span>
+            Knowledge <span className="accent">Graph</span>
           </h1>
           <p style={{ textAlign: "center", color: "rgba(255,255,255,0.4)", fontSize: "13px", marginBottom: "20px" }}>
             Drag nodes freely · Click green nodes to open blog posts
@@ -245,7 +245,7 @@ function Blog() {
           </div>
 
           <h2 style={{ textAlign: "center", color: "white", marginBottom: "30px" }}>
-            Blog <span className="purple">Posts</span>
+            Blog <span className="accent">Posts</span>
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
             {posts.map(post => (

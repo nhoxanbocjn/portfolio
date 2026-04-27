@@ -23,7 +23,7 @@ html[data-theme="light"] body {
   background-color: #f0f2f8 !important;
 }
 
-.purple {
+.accent {
   color: var(--imp-text-color) !important;
 }
 
@@ -928,7 +928,7 @@ button:focus {
 /* Light Theme */
 /* --------- */
 
-/* Override accent color variable — used by .purple, .blockquote-footer, etc. */
+/* Override accent color variable — used by .accent, .blockquote-footer, etc. */
 [data-theme="light"] {
   --imp-text-color: #0066a8;
   background-color: #f0f2f8;

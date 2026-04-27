@@ -64,7 +64,7 @@ function Home() {
             <h1>{t.findMe}</h1>
             <p>
               {t.connectPrefix}{" "}
-              <span className="purple">{t.connectBold} </span>
+              <span className="accent">{t.connectBold} </span>
               {t.connectSuffix}
             </p>
             <ul className="home-about-social-links">
