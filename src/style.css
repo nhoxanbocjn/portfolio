@@ -538,6 +538,144 @@ button:focus {
   border-color: rgba(0, 102, 168, 0.35);
 }
 
+/* --------- */
+/* Project view toggle */
+/* --------- */
+
+/* Prevent the full-screen tsparticles canvas from blocking clicks on page content */
+#tsparticles {
+  pointer-events: none !important;
+}
+
+.project-view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.view-toggle-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.view-toggle-btn:hover {
+  color: #15cfe0;
+  border-color: rgba(21, 207, 224, 0.4);
+  background: rgba(21, 207, 224, 0.08);
+}
+
+.view-toggle-btn.active {
+  color: #15cfe0;
+  border-color: rgba(21, 207, 224, 0.6);
+  background: rgba(21, 207, 224, 0.12);
+}
+
+/* --------- */
+/* Project list view */
+/* --------- */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 18px 22px;
+  transition: all 0.3s ease;
+}
+
+.project-list-item:hover {
+  border-color: rgba(21, 207, 224, 0.4);
+  background: rgba(21, 207, 224, 0.05);
+  transform: translateX(4px);
+}
+
+.project-list-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.project-list-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-list-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-list-desc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.project-list-actions {
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .view-toggle-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .view-toggle-btn:hover,
+[data-theme="light"] .view-toggle-btn.active {
+  color: #0066a8;
+  border-color: rgba(0, 102, 168, 0.5);
+  background: rgba(0, 102, 168, 0.08);
+}
+
+[data-theme="light"] .project-list-item {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .project-list-item:hover {
+  border-color: rgba(0, 102, 168, 0.35);
+  background: rgba(0, 102, 168, 0.04);
+}
+
+[data-theme="light"] .project-list-title {
+  color: #1a1a2e;
+}
+
+[data-theme="light"] .project-list-desc {
+  color: rgba(26, 26, 46, 0.7);
+}
+
 .blog-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;

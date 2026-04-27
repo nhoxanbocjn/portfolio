@@ -81,6 +81,10 @@ const translations = {
           title: "Customer Segmentation (RFM)",
           description: "RFM segmentation of 1M+ customer records using Python and pandas to identify high-value, at-risk, and churned segments. Clusters visualised in Metabase with automated weekly refresh via scheduled Python job."
         },
+        {
+          title: "Nhox's Crypto",
+          description: "Real-time cryptocurrency tracking & prediction platform. Monitors up to 5 assets simultaneously with live market data, global market overview, and technical analysis signals (RSI, EMA, MACD, Bollinger Bands). Supports sortable lists and grid/list view."
+        },
       ]
     },
     footer: {
@@ -171,6 +175,10 @@ const translations = {
         {
           title: "Phân khúc Khách hàng (RFM)",
           description: "Phân khúc RFM hơn 1 triệu bản ghi khách hàng bằng Python và pandas để xác định nhóm giá trị cao, có nguy cơ rời bỏ và đã rời bỏ. Kết quả trực quan hóa trên Metabase với cập nhật tự động hàng tuần qua scheduled Python job."
+        },
+        {
+          title: "Nhox's Crypto",
+          description: "Nền tảng theo dõi và dự đoán tiền điện tử theo thời gian thực. Theo dõi đến 5 tài sản cùng lúc với dữ liệu thị trường trực tiếp, tổng quan thị trường toàn cầu và tín hiệu phân tích kỹ thuật (RSI, EMA, MACD, Bollinger Bands). Hỗ trợ danh sách có thể sắp xếp và chế độ xem lưới/danh sách."
         },
       ]
     },

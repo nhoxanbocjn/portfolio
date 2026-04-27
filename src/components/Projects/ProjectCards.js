@@ -24,8 +24,8 @@ function ProjectCards(props) {
         <div style={{ marginTop: "auto", paddingTop: "14px" }}>
           {props.techStack && props.techStack.length > 0 && (
             <div className="project-tech-stack" style={{ justifyContent: "center", marginBottom: "12px" }}>
-              {props.techStack.map((tech, i) => (
-                <span key={i} className="tech-badge">{tech}</span>
+              {props.techStack.map((tech) => (
+                <span key={tech} className="tech-badge">{tech}</span>
               ))}
             </div>
           )}

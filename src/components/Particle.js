@@ -63,7 +63,7 @@ function Particle() {
         },
 
         interactivity: {
-          detectsOn: "canvas",
+          detectsOn: "window",
           events: {
             onHover: {
               enable: true,
