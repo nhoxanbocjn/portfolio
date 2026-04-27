@@ -14,9 +14,10 @@ function About() {
   const t = translations[lang].about;
 
   return (
-    <>
-      <Particle />
+    
+     
       <Container fluid className="about-section">
+         <Particle />
         <Container>
           <Row style={{ justifyContent: "center", padding: "10px" }}>
             <Col
@@ -60,7 +61,7 @@ function About() {
           <Toolstack />
         </Container>
       </Container>
-    </>
+    
   );
 }
 

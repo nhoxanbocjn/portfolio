@@ -29,7 +29,7 @@ function Projects() {
         </h1>
         <p className="project-subtext">{t.subtext}</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={chatify}
               isBlog={false}
@@ -91,7 +91,7 @@ function Projects() {
               description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%. Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
               ghLink="https://github.com/nhoxanboc4419/Face_And_Emotion_Detection"
             />
-          </Col>
+          </Col> */}
 
           <Col md={4} className="project-card">
             <ProjectCard
@@ -101,7 +101,9 @@ function Projects() {
               title="Sales Data Pipeline"
               description="End-to-end ETL pipeline ingesting sales transactions from multiple sources into a PostgreSQL data warehouse. DAGs orchestrated with Apache Airflow, transformations handled by dbt models with built-in data quality tests and documentation."
               ghLink="https://github.com/nhoxanbocjn"
-              techStack={["Python", "Airflow", "PostgreSQL", "SQL"]}
+              techStack={["Python", "Airflow", "PostgreSQL"]}
+              // demoLink="https://plant49-ai.herokuapp.com/"
+
             />
           </Col>
 
@@ -113,7 +115,7 @@ function Projects() {
               title="Business Intelligence Dashboard"
               description="Interactive Power BI dashboard tracking revenue, conversion rate, customer cohorts, and funnel analysis. Connected to a PostgreSQL DWH with row-level security per region. Reduced weekly reporting effort from 4 hours to fully automated."
               ghLink="https://github.com/nhoxanbocjn"
-              techStack={["Power BI", "DAX", "SQL", "PostgreSQL"]}
+              techStack={["Power BI", "DAX","PBI service", "PostgreSQL"]}
             />
           </Col>
 
@@ -125,11 +127,11 @@ function Projects() {
               title="Customer Segmentation (RFM)"
               description="RFM segmentation of 1M+ customer records using Python and pandas to identify high-value, at-risk, and churned segments. Clusters visualised in Metabase with automated weekly refresh via scheduled Python job."
               ghLink="https://github.com/nhoxanbocjn"
-              techStack={["Python", "Pandas", "SQL", "Metabase"]}
+              techStack={["Python", "Pandas", "MS SQL", "Metabase"]}
             />
           </Col>
 
-        </Row>
+        </Row> 
       </Container>
     </Container>
   );

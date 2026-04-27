@@ -24,16 +24,12 @@ function Home2() {
               <br />
               <br />
               {t.skillsPrefix}
-              <i>
-                <b className="purple"> {t.skillsBold} </b>
-              </i>
+              <b className="purple"> {t.skillsBold} </b>
               {t.skillsSuffix}
               <br />
               <br />
               {t.interestsPrefix}
-              <i>
-                <b className="purple"> {t.interestsBold} </b>
-              </i>
+              <b className="purple"> {t.interestsBold} </b>
               {t.interestsSuffix}{" "}
               <b className="purple">Airflow</b>,{" "}
               <b className="purple">Dagster</b>, and{" "}

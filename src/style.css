@@ -14,6 +14,15 @@ html {
   --imp-text-color: #15cfe0;
 }
 
+/* Base page background — overrides Bootstrap's white body */
+body {
+  background-color: #0c0818 !important;
+}
+
+html[data-theme="light"] body {
+  background-color: #f0f2f8 !important;
+}
+
 .purple {
   color: var(--imp-text-color) !important;
 }
@@ -456,7 +465,9 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-color: #0c0818 !important;
+  background-image: none !important;
+  flex: 1;
 }
 
 .project-card {
@@ -474,6 +485,14 @@ button:focus {
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.project-card-view .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;
@@ -482,10 +501,8 @@ button:focus {
 }
 
 .project-card-buttons {
-  bottom  : 1%;
-
-  justify-content: center;
-  gap: 16px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .project-card-icon-header {
@@ -926,13 +943,18 @@ button:focus {
   background-color: #f0f2f8;
 }
 
-/* Scrollbar */
+/* Scrollbar – light is exact inverse of dark */
 [data-theme="light"] ::-webkit-scrollbar-track {
-  background: #dde0f0;
+  background: #f5f1f1;
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #8888aa;
+  background: rgba(37, 30, 42, 0.85);
+  border-radius: 12px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 30, 42, 1);
 }
 
 /* --------- */
@@ -1083,8 +1105,9 @@ button:focus {
 /* --------- */
 [data-theme="light"] .quote-card-view {
   color: #1a1a2e !important;
-  background-color: rgba(255, 255, 255, 0.65) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: #f0f2f8 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 [data-theme="light"] .blockquote-footer {
@@ -1102,7 +1125,8 @@ button:focus {
 }
 
 [data-theme="light"] .tech-icons:hover {
-  outline: 2.2px solid rgba(0, 102, 168, 0.75) !important;
+  outline: 2.2px solid rgba(220, 180, 0, 0.9) !important;
+  box-shadow: 4px 5px 8px 4px rgba(255, 220, 0, 0.35) !important;
 }
 
 [data-theme="light"] .tech-icons-text {
@@ -1113,12 +1137,13 @@ button:focus {
   color: #1a1a2e !important;
 }
 
+
 /* --------- */
 /* Projects – light */
 /* --------- */
 [data-theme="light"] .project-card-view {
   color: #1a1a2e !important;
-  background-color: rgba(255, 255, 255, 0.88) !important;
+  background-color: #f0f2f8 !important;
   box-shadow: 0 4px 5px 3px rgba(0, 102, 168, 0.22) !important;
 }
 

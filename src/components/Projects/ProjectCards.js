@@ -22,31 +22,32 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        {props.techStack && props.techStack.length > 0 && (
-          <div className="project-tech-stack">
-            {props.techStack.map((tech, i) => (
-              <span key={i} className="tech-badge">{tech}</span>
-            ))}
+        <div style={{ marginTop: "auto", paddingTop: "14px" }}>
+          {props.techStack && props.techStack.length > 0 && (
+            <div className="project-tech-stack" style={{ justifyContent: "center", marginBottom: "12px" }}>
+              {props.techStack.map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
+          )}
+          <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+            {/* <Button variant="primary" href={props.ghLink} target="_blank" className="project-card-buttons">
+              <BsGithub /> &nbsp;
+              {props.isBlog ? "Blog" : "GitHub"}
+            </Button> */}
+            {!props.isBlog && props.demoLink && (
+              <Button
+                className="project-card-buttons"
+                variant="primary"
+                href={props.demoLink}
+                target="_blank"
+              >
+                <CgWebsite /> &nbsp;
+                {"Demo"}
+              </Button>
+            )}
           </div>
-        )}
-        <Button variant="primary" href={props.ghLink} target="_blank" className="project-card-buttons">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-        {!props.isBlog && props.demoLink && (
-          <Button
-            className="project-card-buttons"
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
+        </div>
       </Card.Body>
     </Card>
   );

@@ -30,9 +30,9 @@ const translations = {
       interestsSuffix:
         "and building reliable ETL/ELT workflows with tools like",
       currentPrefix: "Currently working as a",
-      currentRole: "Data Analyst & Freelancer",
+      currentRole: "Data Analyst",
       currentAt: "at",
-      currentCompany: "ShopeePay Digital Wallet",
+      currentCompany: "ShopeePay - Digital Wallet",
       currentSuffix:
         ", delivering data-driven value in fintech — from pipeline automation to A/B testing and customer segmentation.",
     },
@@ -47,7 +47,7 @@ const translations = {
         greeting: "Hi everyone! I'm",
         from: "from",
         workPrefix: "I'm currently working as a",
-        workRole: "Data Analyst & Freelancer",
+        workRole: "Data Analyst",
         workAt: "at",
         eduPrefix: "I hold a Bachelor of",
         eduDegree: "Management Information System",
@@ -125,7 +125,7 @@ const translations = {
         greeting: "Xin chào! Tôi là",
         from: "đến từ",
         workPrefix: "Hiện tôi đang là",
-        workRole: "Data Analyst & Freelancer",
+        workRole: "Data Analyst",
         workAt: "tại",
         eduPrefix: "Tôi tốt nghiệp Cử nhân",
         eduDegree: "Hệ thống Thông tin Quản lý",
@@ -140,7 +140,7 @@ const translations = {
           "Du lịch và Khám phá những nơi mới",
         ],
         quote: '"Biến dữ liệu thành những quyết định tạo ra sự khác biệt!"',
-        author: "Nguyễn Lê",
+        author: "Nguyên Lê",
       },
     },
     projects: {

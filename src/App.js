@@ -36,6 +36,10 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
@@ -61,14 +65,16 @@ function App() {
               toggleLang={toggleLang}
             />
             <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/project" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/project" element={<Projects />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </div>
             <Footer />
           </div>
         </Router>
