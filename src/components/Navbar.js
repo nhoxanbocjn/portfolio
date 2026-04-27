@@ -4,14 +4,15 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
-import { BsSun, BsMoon } from "react-icons/bs";
 import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
+  LuHome,
+  LuUser,
+  LuLayoutGrid,
+  LuFileText,
+  LuNewspaper,
+  LuSun,
+  LuMoon,
+} from "react-icons/lu";
 import TypingText from "./NavType";
 import { useLang } from "../context/LangContext";
 import translations from "../translations";
@@ -61,7 +62,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t.home}
+                <LuHome style={{ marginBottom: "2px" }} /> {t.home}
               </Nav.Link>
             </Nav.Item>
 
@@ -71,7 +72,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> {t.about}
+                <LuUser style={{ marginBottom: "2px" }} /> {t.about}
               </Nav.Link>
             </Nav.Item>
 
@@ -81,10 +82,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                {t.projects}
+                <LuLayoutGrid style={{ marginBottom: "2px" }} /> {t.projects}
               </Nav.Link>
             </Nav.Item>
 
@@ -94,7 +92,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> {t.resume}
+                <LuFileText style={{ marginBottom: "2px" }} /> {t.resume}
               </Nav.Link>
             </Nav.Item>
 
@@ -104,7 +102,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 to="http://blog.nhoxanboc.work/"
                 onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> {t.knowledge}
+                <LuNewspaper style={{ marginBottom: "2px" }} /> {t.knowledge}
               </Nav.Link>
             </Nav.Item>
 
@@ -115,9 +113,9 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
-                  <BsSun style={{ fontSize: "1.2em" }} />
+                  <LuSun style={{ fontSize: "1.2em" }} />
                 ) : (
-                  <BsMoon style={{ fontSize: "1.2em" }} />
+                  <LuMoon style={{ fontSize: "1.2em" }} />
                 )}
               </Button>
             </Nav.Item>

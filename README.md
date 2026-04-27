@@ -1,76 +1,78 @@
-<!-- <h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://nhoxanboc.vercel.app/" target="_blank">nhoxanboc.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# Personal Portfolio — React
 
-<br/>
+Live at **[nhoxanboc.work](https://nhoxanboc.work)**
 
-<center>
+A personal portfolio site with dark/light theme, EN/VI language toggle, project showcase, PDF resume viewer, and an interactive blog knowledge graph.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/nhoxanboc4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/nhoxanboc4419/Portfolio?color=red&logo=github&style=for-the-badge)
+> Inspired by and built upon [soumyajit4419/Portfolio](https://github.com/soumyajit4419/Portfolio). Thanks for the great foundation!
 
-</center>
+---
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/nhoxanboc4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/nhoxanboc4419/Portfolio/issues">Request Feature</a>
-</h3>
+## Stack
 
-## TL;DR
+- React 17 + React Router v6
+- React-Bootstrap + plain CSS
+- Deployed on Vercel (auto-deploy on push to `main`)
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Nhoxanboc4419](https://github.com/nhoxanboc4419/Portfolio). Thanks!
+---
 
-## Built With
+## Fork & make it yours
 
-My personal portfolio <a href="https://nhoxanboc.vercel.app/" target="_blank">nhoxanboc.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+### 1. Clone and install
 
-This project was built using these technologies.
+```bash
+git clone https://github.com/nhoxanbocjn/portfolio.git
+cd portfolio
+npm install
+npm start
+```
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+Open [http://localhost:3000](http://localhost:3000).
 
-## Features
+### 2. Update your personal info
 
-**📖 Multi-Page Layout**
+| What | File |
+|---|---|
+| All page text (bio, headings, etc.) | `src/translations/index.js` |
+| Job title typewriter strings | `src/components/Home/Type.js` |
+| Skill icons | `src/components/About/Techstack.js` |
+| Tool icons | `src/components/About/Toolstack.js` |
+| Project cards | `src/components/Projects/Projects.js` |
+| Resume PDF | Replace `src/Assets/CV.PDF` |
+| Blog posts & knowledge graph | `src/components/Blog/Blog.js` |
+| Avatar image | Replace `src/Assets/home_main_img.png` |
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+### 3. Theming
 
-**📱 Fully Responsive**
+Dark mode is the default. All light-mode overrides are `[data-theme="light"]` blocks at the bottom of `src/style.css`. The accent colour is controlled by `--imp-text-color` — change it in the `:root` block and the light-mode override to restyle the whole site.
 
-## Getting Started
+### 4. Deploy
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+Push to GitHub and connect the repo to [Vercel](https://vercel.com). Every push to `main` auto-deploys.
 
-## 🛠 Installation and Setup Instructions
+> **Note:** Vercel runs with `CI=true`, which treats ESLint warnings as errors. Make sure there are no unused imports before pushing.
 
-1. Installation: `npm install`
+---
 
-2. In the project directory, you can run: `npm start`
+## Project structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+```
+src/
+├── components/
+│   ├── Home/       # Hero section + intro
+│   ├── About/      # Bio card, skill icons, tool icons
+│   ├── Projects/   # Project cards
+│   ├── Resume/     # PDF viewer
+│   └── Blog/       # Knowledge graph + markdown reader
+├── context/        # ThemeContext, LangContext
+├── translations/   # EN / VI string maps (index.js)
+├── Assets/         # Images and CV.PDF
+└── style.css       # All styles
+```
 
-## Usage Instructions
+---
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+## Credits
 
-### Show your support
-
-Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/nhoxanboc4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a> -->
+Original template by [Soumyajit Behera](https://github.com/soumyajit4419/Portfolio).  
+Customised and extended by [nhoxanbocjn](https://github.com/nhoxanbocjn).
