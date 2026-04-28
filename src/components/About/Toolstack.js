@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { SiPowerbi, SiMicrosoftexcel, SiGooglesheets } from "react-icons/si";
 import chrome from "../../Assets/TechIcons/Google Chrome.svg";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
-
+import macOS from "../../Assets/TechIcons/Apple MacOSX.svg";
+import postman from "../../Assets/TechIcons/Postman.svg";
+import linux from "../../Assets/TechIcons/linux.svg";
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
@@ -16,16 +17,16 @@ function Toolstack() {
         <div className="tech-icons-text">Google Chrome</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPowerbi fontSize={"24px"} />
-        <div className="tech-icons-text">Power BI</div>
+        <img src={macOS} alt="macOS" className="tech-icon-images" />
+        <div className="tech-icons-text">MAC OS</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftexcel fontSize={"24px"} />
-        <div className="tech-icons-text">Excel</div>
+        <img src={linux} alt="Linux" className="tech-icon-images" />        
+        <div className="tech-icons-text">Linux</div>
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiGooglesheets fontSize={"24px"} />
-        <div className="tech-icons-text">Google Sheets</div>
+            <Col xs={4} md={2} className="tech-icons">
+        <img src={postman} alt="Postman" className="tech-icon-images" />
+        <div className="tech-icons-text">Postman</div>
       </Col>
     </Row>
   );
