@@ -17,9 +17,9 @@ function Home() {
   const t = translations[lang].home;
 
   return (
-    <section>
-      <Container fluid>
-        <Particle />
+    <section style={{ position: "relative" }}>
+      <Particle />
+      <Container fluid className="home-section" id="home">
         <Container className="home-about-description">
           <Row>
             <Col xs={12} md={8} className="home-header">
@@ -58,7 +58,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
-      <Container>
+      <Container  fluid className="home-foot-section pt-0"  id = "home" >
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
             <h1>{t.findMe}</h1>

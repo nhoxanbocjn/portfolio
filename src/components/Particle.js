@@ -12,8 +12,7 @@ function Particle() {
       id="tsparticles"
       options={{
         fullScreen: {
-          enable: true,
-          zIndex: -1,
+          enable: false,
         },
 
         particles: {

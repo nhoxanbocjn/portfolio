@@ -5,6 +5,7 @@ import Tilt from "react-parallax-tilt";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
+
 function Home2() {
   const lang = useLang();
   const t = translations[lang].home2;
