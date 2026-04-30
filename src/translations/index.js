@@ -92,6 +92,14 @@ const translations = {
       copyright: "Copyright ©",
       name: "Nhøx"
     },
+    chatbot: {
+      title: "Ask about Nguyen Le",
+      placeholder: "Ask me anything...",
+      welcome: "Hi! I'm Nguyen Le's AI assistant. Ask me about his skills, projects, or background!",
+      error: "Sorry, something went wrong. Please try again.",
+      ariaOpen: "Open chat",
+      ariaClose: "Close chat",
+    },
   },
 
   vi: {
@@ -186,6 +194,14 @@ const translations = {
       designed: "Thiết kế và Phát triển bởi Nhoxanboc",
       copyright: "Bản quyền ©",
       name: "Nhøx"
+    },
+    chatbot: {
+      title: "Ask about Nguyen Le",
+      placeholder: "Ask me anything...",
+      welcome: "Hi! I'm Nguyen Le's AI assistant. Ask me about his skills, projects, or background!",
+      error: "Sorry, something went wrong. Please try again.",
+      ariaOpen: "Open chat",
+      ariaClose: "Close chat",
     },
   },
 };

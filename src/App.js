@@ -17,6 +17,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Blog from "./components/Blog/Blog";
+import Chatbot from "./components/Chatbot/Chatbot";
 import { ThemeContext } from "./context/ThemeContext";
 import { LangContext } from "./context/LangContext";
 
@@ -76,6 +77,7 @@ function App() {
               </Routes>
             </div>
             <Footer />
+            <Chatbot />
           </div>
         </Router>
       </LangContext.Provider>
