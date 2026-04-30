@@ -23,7 +23,7 @@ If asked something unrelated to Nguyen Le, politely redirect to portfolio-relate
 
 async function callHuggingFace(messages) {
   const res = await fetch(
-    "https://api-inference.huggingface.co/v1/chat/completions",
+    "https://router.huggingface.co/v1/chat/completions",
     {
       method: "POST",
       headers: {
@@ -31,13 +31,14 @@ async function callHuggingFace(messages) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "meta-llama/Llama-3.2-3B-Instruct",
+        model: "Qwen/Qwen2.5-7B-Instruct",
         messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
         max_tokens: 512,
       }),
     }
   );
   const data = await res.json();
+  if (data.error) throw new Error(data.error);
   return data.choices?.[0]?.message?.content;
 }
 
