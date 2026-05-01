@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import {
-  LuHome,
-  LuUser,
-  LuLayoutGrid,
-  LuFileText,
-  LuNewspaper,
-  LuSun,
-  LuMoon,
-} from "react-icons/lu";
+  PiHouseDuotone,
+  PiUserCircleDuotone,
+  PiBriefcaseDuotone,
+  PiReadCvLogoDuotone,
+  PiNotepadDuotone,
+  PiSunDuotone,
+  PiMoonDuotone,
+} from "react-icons/pi";
 import TypingText from "./NavType";
 import { useLang } from "../context/LangContext";
 import translations from "../translations";
@@ -48,6 +47,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
           </span>
           <span className="cursor-blink">█</span>
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -58,11 +58,19 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
           <span></span>
           <span></span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ms-auto nav-icon-only" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <LuHome style={{ marginBottom: "2px" }} /> {t.home}
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => updateExpanded(false)}
+                aria-label={t.home}
+                data-tooltip={t.home}
+              >
+                <PiHouseDuotone size={22} />
+                <span className="nav-label">{t.home}</span>
               </Nav.Link>
             </Nav.Item>
 
@@ -71,8 +79,11 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 as={Link}
                 to="/about"
                 onClick={() => updateExpanded(false)}
+                aria-label={t.about}
+                data-tooltip={t.about}
               >
-                <LuUser style={{ marginBottom: "2px" }} /> {t.about}
+                <PiUserCircleDuotone size={22} />
+                <span className="nav-label">{t.about}</span>
               </Nav.Link>
             </Nav.Item>
 
@@ -81,8 +92,11 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 as={Link}
                 to="/project"
                 onClick={() => updateExpanded(false)}
+                aria-label={t.projects}
+                data-tooltip={t.projects}
               >
-                <LuLayoutGrid style={{ marginBottom: "2px" }} /> {t.projects}
+                <PiBriefcaseDuotone size={22} />
+                <span className="nav-label">{t.projects}</span>
               </Nav.Link>
             </Nav.Item>
 
@@ -91,8 +105,11 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
+                aria-label={t.resume}
+                data-tooltip={t.resume}
               >
-                <LuFileText style={{ marginBottom: "2px" }} /> {t.resume}
+                <PiReadCvLogoDuotone size={22} />
+                <span className="nav-label">{t.resume}</span>
               </Nav.Link>
             </Nav.Item>
 
@@ -101,35 +118,45 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
                 as={Link}
                 to="http://blog.nhoxanboc.work/"
                 onClick={() => updateExpanded(false)}
+                aria-label={t.knowledge}
+                data-tooltip={t.knowledge}
               >
-                <LuNewspaper style={{ marginBottom: "2px" }} /> {t.knowledge}
+                <PiNotepadDuotone size={22} />
+                <span className="nav-label">{t.knowledge}</span>
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="theme-btn">
-              <Button
+            <Nav.Item className="nav-divider" aria-hidden="true" />
+
+            <Nav.Item>
+              <Nav.Link
+                as="button"
+                className="nav-toggle-btn"
                 onClick={toggleTheme}
-                className="theme-btn-inner"
-                aria-label="Toggle theme"
+                aria-label={t.theme}
+                data-tooltip={t.theme}
               >
                 {theme === "dark" ? (
-                  <LuSun style={{ fontSize: "1.2em" }} />
+                  <PiSunDuotone size={22} />
                 ) : (
-                  <LuMoon style={{ fontSize: "1.2em" }} />
+                  <PiMoonDuotone size={22} />
                 )}
-              </Button>
+                <span className="nav-label">{t.theme}</span>
+              </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="lang-btn">
-              <Button
+            <Nav.Item>
+              <Nav.Link
+                as="button"
+                className="nav-toggle-btn nav-lang-btn"
                 onClick={toggleLang}
-                className="lang-btn-inner"
-                aria-label="Toggle language"
+                aria-label={t.language}
+                data-tooltip={t.language}
               >
                 <span className={lang === "en" ? "lang-active" : "lang-inactive"}>EN</span>
-                <span className="lang-sep"> | </span>
+                <span className="lang-sep">|</span>
                 <span className={lang === "vi" ? "lang-active" : "lang-inactive"}>VI</span>
-              </Button>
+              </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

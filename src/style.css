@@ -988,68 +988,163 @@ button:focus {
 }
 
 /* --------- */
-/* Theme Toggle Button */
+/* Navbar — unified icon pill block */
 /* --------- */
-.theme-btn {
-  font-size: 1.1em !important;
-  padding-top: 10px !important;
-  margin-left: 4px;
+
+/* The whole nav is one rounded container, split in two by .nav-divider */
+.nav-icon-only {
+  display: flex !important;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
 }
 
-.theme-btn-inner {
-  line-height: 1.4em !important;
-  background-color: transparent !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  padding: 0.25rem 0.7rem !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  color: white !important;
-  border-radius: 8px !important;
-  transition: all 0.3s ease !important;
+.nav-icon-only .nav-item {
+  margin-left: 0 !important;
+  position: relative;
 }
 
-.theme-btn-inner:hover {
-  transform: translateY(-2px) !important;
-  border-color: #15cfe0 !important;
+.nav-icon-only .nav-link {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 0.7rem !important;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Text label — hidden on desktop, shown inside mobile collapse menu */
+.nav-label {
+  display: none;
+}
+
+/* Disable the legacy underline hover effect inside the icon pill */
+.nav-icon-only .nav-item a::after {
+  display: none !important;
+}
+
+.nav-icon-only .nav-link:hover {
+  background: rgba(21, 207, 224, 0.12);
   color: #15cfe0 !important;
-  background-color: transparent !important;
 }
 
-.theme-btn-inner::after {
-  display: none !important;
+/* Vertical divider that splits the pill into two halves */
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 8px;
+  align-self: center;
+  flex-shrink: 0;
 }
 
-/* --------- */
-/* Language Toggle Button */
-/* --------- */
-.lang-btn {
-  font-size: 1.1em !important;
-  padding-top: 10px !important;
-  margin-left: 4px;
+/* Reset button so it inherits nav-link styles */
+.nav-toggle-btn {
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  gap: 2px;
 }
 
-.lang-btn-inner {
-  background-color: transparent !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
-  padding: 0.18rem 0.6rem !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  color: white !important;
-  border-radius: 20px !important;
-  transition: border-color 0.3s ease !important;
-  font-size: 0.78em !important;
+.nav-toggle-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Higher specificity: matches .nav-icon-only .nav-link to actually win the cascade.
+   <button> doesn't inherit font-family by default, so set it on the button and its spans. */
+.nav-icon-only .nav-lang-btn,
+.nav-icon-only .nav-lang-btn span {
+  font-family: inherit !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
   letter-spacing: 0.6px;
-  line-height: 1.6em !important;
+  line-height: 1 !important;
 }
 
-.lang-btn-inner:hover {
-  border-color: #15cfe0 !important;
-  background-color: transparent !important;
-  transform: none !important;
+.nav-icon-only .nav-lang-btn {
+  gap: 5px;
+  min-width: 60px;
 }
 
-.lang-btn-inner::after {
-  display: none !important;
+.nav-icon-only .nav-lang-btn .lang-sep {
+  font-weight: 300 !important;
+  opacity: 0.5;
+  transform: translateY(-0.5px);
+}
+
+/* --------- */
+/* Custom hover tooltip (data-tooltip attribute) */
+/* --------- */
+.nav-icon-only .nav-link[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background: rgba(15, 13, 30, 0.95);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  z-index: 1040;
+}
+
+.nav-icon-only .nav-link[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 767px) {
+  /* Stack items vertically inside the collapsed mobile menu */
+  .nav-icon-only {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    border-radius: 12px;
+    padding: 8px;
+  }
+  .nav-icon-only .nav-link {
+    justify-content: flex-start !important;
+    height: 42px;
+    padding: 0 14px !important;
+    gap: 12px;
+    border-radius: 8px;
+  }
+  /* Show the text label on mobile */
+  .nav-label {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+  /* Horizontal divider line between sections */
+  .nav-divider {
+    width: 100%;
+    height: 1px;
+    margin: 6px 0;
+  }
+  /* Tooltips would clip on mobile — disable since the label is visible */
+  .nav-icon-only .nav-link[data-tooltip]::before {
+    display: none;
+  }
+  /* Lang pill keeps its compact width even in mobile rows */
+  .nav-icon-only .nav-lang-btn {
+    min-width: 0;
+    justify-content: flex-start;
+  }
 }
 
 .lang-active {
@@ -1145,43 +1240,38 @@ button:focus {
   color: #1a1a2e;
 }
 
-/* Theme toggle button – teal fill in light mode */
-[data-theme="light"] .theme-btn-inner {
-  background-color: #0d9488 !important;
-  border-color: #0d9488 !important;
-  color: #ffffff !important;
+/* Navbar pill / toggle buttons – light mode */
+[data-theme="light"] .nav-icon-only {
+  background: rgba(0, 102, 168, 0.05);
+  border-color: rgba(0, 102, 168, 0.15);
 }
 
-[data-theme="light"] .theme-btn-inner:hover {
-  background-color: #0f766e !important;
-  border-color: #0f766e !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
+[data-theme="light"] .nav-icon-only .nav-link:hover {
+  background: rgba(0, 102, 168, 0.1);
+  color: #0066a8 !important;
 }
 
-/* Lang toggle button – teal fill in light mode */
-[data-theme="light"] .lang-btn-inner {
-  background-color: #0d9488 !important;
-  border-color: #0d9488 !important;
-  color: #ffffff !important;
+[data-theme="light"] .nav-divider {
+  background: rgba(26, 26, 46, 0.2);
 }
 
-[data-theme="light"] .lang-btn-inner:hover {
-  background-color: #0f766e !important;
-  border-color: #0f766e !important;
+[data-theme="light"] .nav-icon-only .nav-link[data-tooltip]::before {
+  background: #1a1a2e;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 80, 140, 0.25);
 }
 
 [data-theme="light"] .lang-active {
-  color: #ffffff;
+  color: #0066a8;
   font-weight: 700;
 }
 
 [data-theme="light"] .lang-inactive {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(26, 26, 46, 0.4);
 }
 
 [data-theme="light"] .lang-sep {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(26, 26, 46, 0.2);
 }
 
 [data-theme="light"] .project-subtext {

@@ -22,21 +22,18 @@ Keep answers friendly and brief (2-4 sentences).
 If asked something unrelated to Nguyen Le, politely redirect to portfolio-related topics.`;
 
 async function callHuggingFace(messages) {
-  const res = await fetch(
-    "https://router.huggingface.co/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.HF_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "Qwen/Qwen2.5-7B-Instruct",
-        messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
-        max_tokens: 512,
-      }),
-    }
-  );
+  const res = await fetch("https://router.huggingface.co/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.HF_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "Qwen/Qwen2.5-7B-Instruct",
+      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+      max_tokens: 512,
+    }),
+  });
   const data = await res.json();
   if (data.error) throw new Error(data.error);
   return data.choices?.[0]?.message?.content;

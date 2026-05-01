@@ -5,7 +5,9 @@ const translations = {
       about: "About",
       projects: "Projects",
       resume: "Resume",
-      knowledge: "Knowledge"
+      knowledge: "Notes",
+      theme: "Theme",
+      language: "Language"
     },
     home: {
       greeting: "Hi There!",
@@ -108,7 +110,9 @@ const translations = {
       about: "Giới thiệu",
       projects: "Dự án",
       resume: "Hồ sơ",
-      knowledge: "Kiến thức"
+      knowledge: "Ghi chú",
+      theme: "Giao diện",
+      language: "Ngôn ngữ"
     },
     home: {
       greeting: "Xin chào!",

@@ -30,19 +30,16 @@ function Chatbot() {
   const moved = useRef(false);
   const offset = useRef({ x: 0, y: 0 });
 
-  // seed welcome message on first open
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setMessages([{ role: "assistant", content: t.welcome }]);
     }
   }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // auto-scroll to latest message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // drag handlers
   const onMouseMove = useCallback((e) => {
     if (!dragging.current) return;
     moved.current = true;
@@ -52,9 +49,7 @@ function Chatbot() {
     });
   }, []);
 
-  const onMouseUp = useCallback(() => {
-    dragging.current = false;
-  }, []);
+  const onMouseUp = useCallback(() => { dragging.current = false; }, []);
 
   const onTouchMove = useCallback((e) => {
     if (!dragging.current) return;
@@ -89,21 +84,14 @@ function Chatbot() {
   };
 
   const onFabClick = () => {
-    if (moved.current) return; // was a drag, not a click
+    if (moved.current) return;
     setIsOpen((o) => !o);
   };
 
-  // position panel: open above FAB if in bottom half, below if in top half
   const openAbove = pos.y > window.innerHeight / 2;
-  const panelStyle = openAbove
-    ? { bottom: FAB_SIZE + 12, top: "auto" }
-    : { top: FAB_SIZE + 12, bottom: "auto" };
-
-  // align panel: right-align if FAB is in right half, left-align otherwise
   const alignRight = pos.x > window.innerWidth / 2;
-  const alignStyle = alignRight
-    ? { right: 0, left: "auto" }
-    : { left: 0, right: "auto" };
+  const panelStyle = openAbove ? { bottom: FAB_SIZE + 12, top: "auto" } : { top: FAB_SIZE + 12, bottom: "auto" };
+  const alignStyle = alignRight ? { right: 0, left: "auto" } : { left: 0, right: "auto" };
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
@@ -130,10 +118,7 @@ function Chatbot() {
   };
 
   return (
-    <div
-      className="chatbot-wrapper"
-      style={{ left: pos.x, top: pos.y }}
-    >
+    <div className="chatbot-wrapper" style={{ left: pos.x, top: pos.y }}>
       <button
         className="chatbot-fab"
         onMouseDown={onFabPointerDown}
@@ -156,16 +141,17 @@ function Chatbot() {
             </button>
           </div>
 
-          <div className="chatbot-messages" style={{ maxHeight: Math.min(PANEL_H - 110, window.innerHeight - 160) }}>
+          <div
+            className="chatbot-messages"
+            style={{ maxHeight: Math.min(PANEL_H - 110, window.innerHeight - 160) }}
+          >
             {messages.map((m, i) => (
               <div key={i} className={`chatbot-msg chatbot-msg--${m.role}`}>
                 {m.content}
               </div>
             ))}
             {loading && (
-              <div className="chatbot-msg chatbot-msg--assistant chatbot-typing">
-                ...
-              </div>
+              <div className="chatbot-msg chatbot-msg--assistant chatbot-typing">...</div>
             )}
             <div ref={messagesEndRef} />
           </div>
