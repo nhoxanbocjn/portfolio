@@ -40,7 +40,9 @@ function Home2() {
               {t.currentPrefix}{" "}
               <b className="accent">{t.currentRole}</b> {t.currentAt}{" "}
               <b className="accent">{t.currentCompany}</b>
-              {t.currentSuffix}
+              {t.currentSuffixPre}{" "}
+              <b className="accent">Data Engineer</b>{" "}
+              {t.currentSuffixPost}
             </p>
           </Col>
           <Col md={4} className="myAvtar">

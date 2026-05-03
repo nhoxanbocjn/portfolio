@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
+import { BsDiamondFill } from "react-icons/bs";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
@@ -19,7 +19,10 @@ function AboutCard() {
             <br />
             {t.workPrefix}{" "}
             <span className="accent">{t.workRole}</span> {t.workAt}{" "}
-            <span className="accent">ShopeePay</span>.
+            <span className="accent">ShopeePay</span>
+            {t.workSuffixPre}{" "}
+            <span className="accent">Data Engineer</span>{" "}
+            {t.workSuffixPost}
             <br />
             {t.eduPrefix}{" "}
             <span className="accent">{t.eduDegree}</span> {t.eduFrom}{" "}
@@ -33,7 +36,7 @@ function AboutCard() {
           <ul>
             {t.hobbies.map((hobby, i) => (
               <li key={i} className="about-activity">
-                <ImPointRight /> {hobby}
+                <BsDiamondFill style={{ fontSize: "0.5em", verticalAlign: "middle", marginRight: "8px" }} className="accent" /> {hobby}
               </li>
             ))}
           </ul>
