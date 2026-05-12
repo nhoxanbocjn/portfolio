@@ -1451,8 +1451,9 @@ button:focus {
   position: absolute;
   bottom: 66px;
   right: 0;
-  width: 340px;
-  max-height: 480px;
+  width: 350px;
+  height: 600px;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   background-color: #1b1a2e;
@@ -1586,6 +1587,29 @@ button:focus {
   cursor: not-allowed;
 }
 
+.chatbot-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.chatbot-suggestion-chip {
+  background: none;
+  border: 1px solid rgba(21, 207, 224, 0.5);
+  border-radius: 20px;
+  color: #15cfe0;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.chatbot-suggestion-chip:hover {
+  background-color: rgba(21, 207, 224, 0.15);
+}
+
 @media (max-width: 480px) {
   .chatbot-panel {
     width: calc(100vw - 32px) !important;
@@ -1661,4 +1685,13 @@ button:focus {
 
 [data-theme="light"] .chatbot-send:hover:not(:disabled) {
   background-color: #004f82;
+}
+
+[data-theme="light"] .chatbot-suggestion-chip {
+  border-color: rgba(0, 102, 168, 0.5);
+  color: #0066a8;
+}
+
+[data-theme="light"] .chatbot-suggestion-chip:hover {
+  background-color: rgba(0, 102, 168, 0.1);
 }

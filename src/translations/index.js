@@ -104,6 +104,7 @@ const translations = {
       error: "Sorry, something went wrong. Please try again.",
       ariaOpen: "Open chat",
       ariaClose: "Close chat",
+      suggestions: ["Skills", "Projects", "Experience", "Contact"],
     },
   },
 
@@ -212,6 +213,7 @@ const translations = {
       error: "Sorry, something went wrong. Please try again.",
       ariaOpen: "Open chat",
       ariaClose: "Close chat",
+      suggestions: ["Kỹ năng", "Dự án", "Kinh nghiệm", "Liên hệ"],
     },
   },
 };

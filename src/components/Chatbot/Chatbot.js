@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
-import { LuMessageCircle, LuX, LuSend } from "react-icons/lu";
+import { LuBot, LuX, LuSend } from "react-icons/lu";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
 const FAB_SIZE = 54;
-const PANEL_W = 340;
-const PANEL_H = 480;
+const PANEL_W = 350;
+const PANEL_H = 600;
 
 function getInitialPos() {
   return {
@@ -117,6 +117,20 @@ function Chatbot() {
     }
   };
 
+  const sendSuggestion = (text) => {
+    if (loading) return;
+    const userMsg = { role: "user", content: text };
+    const next = [...messages, userMsg];
+    setMessages(next);
+    setLoading(true);
+    axios.post("/api/chat", { messages: next })
+      .then((res) => setMessages([...next, { role: "assistant", content: res.data.reply }]))
+      .catch(() => setMessages([...next, { role: "assistant", content: t.error }]))
+      .finally(() => setLoading(false));
+  };
+
+  const showSuggestions = messages.length === 1 && messages[0].role === "assistant" && !loading;
+
   return (
     <div className="chatbot-wrapper" style={{ left: pos.x, top: pos.y }}>
       <button
@@ -126,7 +140,7 @@ function Chatbot() {
         onClick={onFabClick}
         aria-label={isOpen ? t.ariaClose : t.ariaOpen}
       >
-        {isOpen ? <LuX /> : <LuMessageCircle />}
+        {isOpen ? <LuX /> : <LuBot />}
       </button>
 
       {isOpen && (
@@ -152,6 +166,15 @@ function Chatbot() {
             ))}
             {loading && (
               <div className="chatbot-msg chatbot-msg--assistant chatbot-typing">...</div>
+            )}
+            {showSuggestions && (
+              <div className="chatbot-suggestions">
+                {t.suggestions.map((s, i) => (
+                  <button key={i} className="chatbot-suggestion-chip" onClick={() => sendSuggestion(s)}>
+                    {s}
+                  </button>
+                ))}
+              </div>
             )}
             <div ref={messagesEndRef} />
           </div>
