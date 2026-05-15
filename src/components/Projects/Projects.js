@@ -8,9 +8,11 @@ import {
   SiPowerbi,
   SiPandas,
   SiBitcoin,
+  SiReact,
 } from "react-icons/si";
 import { LuLayoutGrid, LuList } from "react-icons/lu";
 import { CgWebsite } from "react-icons/cg";
+import { BsGithub } from "react-icons/bs";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
@@ -18,19 +20,19 @@ const PROJECT_META = [
   {
     icon: <SiApacheairflow />,
     color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
-    ghLink: "https://github.com/nhoxanbocjn",
+    // ghLink: "https://github.com/nhoxanbocjn",
     techStack: ["Python", "Airflow", "PostgreSQL"],
   },
   {
     icon: <SiPowerbi />,
     color: "linear-gradient(135deg, #1a0a00 0%, #3d1f00 100%)",
-    ghLink: "https://github.com/nhoxanbocjn",
+    // ghLink: "https://github.com/nhoxanbocjn",
     techStack: ["Power BI", "DAX", "PBI service", "PostgreSQL"],
   },
   {
     icon: <SiPandas />,
     color: "linear-gradient(135deg, #0a0a2e 0%, #150e5e 100%)",
-    ghLink: "https://github.com/nhoxanbocjn",
+    // ghLink: "https://github.com/nhoxanbocjn",
     techStack: ["Python", "Pandas", "MS SQL", "Metabase"],
   },
   {
@@ -38,6 +40,13 @@ const PROJECT_META = [
     color: "linear-gradient(135deg, #1a1000 0%, #4d3000 100%)",
     demoLink: "https://crypto.nhoxanboc.work",
     techStack: ["React", "CoinGecko API", "RSI", "MACD"],
+  },
+  {
+    icon: <SiReact />,
+    color: "linear-gradient(135deg, #001a2e 0%, #003d5c 100%)",
+    ghLink: "https://github.com/nhoxanbocjn/portfolio",
+    // demoLink: "https://nhoxanboc.work",
+    techStack: ["React", "Vercel", "React-Bootstrap"],
   },
 ];
 
@@ -107,16 +116,28 @@ function Projects() {
                     ))}
                   </div>
                 </div>
-                {meta.demoLink && (
-                  <div className="project-list-actions">
-                    <Button
-                      className="project-card-buttons"
-                      variant="primary"
-                      href={meta.demoLink}
-                      target="_blank"
-                    >
-                      <CgWebsite /> &nbsp; Demo
-                    </Button>
+                {(meta.ghLink || meta.demoLink) && (
+                  <div className="project-list-actions" style={{ display: "flex", gap: "10px" }}>
+                    {meta.ghLink && (
+                      <Button
+                        className="project-card-buttons"
+                        variant="primary"
+                        href={meta.ghLink}
+                        target="_blank"
+                      >
+                        <BsGithub /> &nbsp; GitHub
+                      </Button>
+                    )}
+                    {meta.demoLink && (
+                      <Button
+                        className="project-card-buttons"
+                        variant="primary"
+                        href={meta.demoLink}
+                        target="_blank"
+                      >
+                        <CgWebsite /> &nbsp; Demo
+                      </Button>
+                    )}
                   </div>
                 )}
               </div>

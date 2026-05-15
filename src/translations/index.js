@@ -90,6 +90,10 @@ const translations = {
           title: "Nhox's Crypto",
           description: "Real-time cryptocurrency tracking & prediction platform. Monitors up to 5 assets simultaneously with live market data, global market overview, and technical analysis signals (RSI, EMA, MACD, Bollinger Bands). Supports sortable lists and grid/list view."
         },
+        {
+          title: "Personal Portfolio",
+          description: "This portfolio website — built with React and deployed on Vercel. Features a dark/light theme, bilingual EN/VI support, an interactive knowledge graph blog, a PDF resume viewer, and an AI chatbot powered by Qwen via Hugging Face."
+        },
       ]
     },
     footer: {
@@ -198,6 +202,10 @@ const translations = {
         {
           title: "Nhox's Crypto",
           description: "Nền tảng theo dõi và dự đoán tiền điện tử theo thời gian thực. Theo dõi đến 5 tài sản cùng lúc với dữ liệu thị trường trực tiếp, tổng quan thị trường toàn cầu và tín hiệu phân tích kỹ thuật (RSI, EMA, MACD, Bollinger Bands). Hỗ trợ danh sách có thể sắp xếp và chế độ xem lưới/danh sách."
+        },
+        {
+          title: "Portfolio Cá nhân",
+          description: "Trang portfolio này — xây dựng bằng React, triển khai trên Vercel. Tích hợp chế độ tối/sáng, hỗ trợ song ngữ EN/VI, blog dạng đồ thị kiến thức tương tác, xem CV dạng PDF và chatbot AI sử dụng Qwen qua Hugging Face."
         },
       ]
     },
