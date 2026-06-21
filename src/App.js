@@ -16,6 +16,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Blog from "./components/Blog/Blog";
+import Certifications from "./components/Certifications/Certifications";
 import Chatbot from "./components/Chatbot/Chatbot";
 import { ThemeContext } from "./context/ThemeContext";
 import { LangContext } from "./context/LangContext";
@@ -70,6 +71,7 @@ function App() {
                 <Route path="/project" element={<Projects />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/certifications" element={<Certifications />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>

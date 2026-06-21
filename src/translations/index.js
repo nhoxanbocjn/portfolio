@@ -5,6 +5,7 @@ const translations = {
       about: "About",
       projects: "Projects",
       resume: "Resume",
+      certifications: "Certifications",
       knowledge: "Notes",
       theme: "Theme",
       language: "Language"
@@ -96,6 +97,24 @@ const translations = {
         },
       ]
     },
+    certifications: {
+      heading: "My",
+      headingPurple: "Certifications",
+      subtext: "Click a certificate to view it full-screen — zoom in and out for the details.",
+      view: "View certificate",
+      viewPdf: "View PDF",
+      zoomIn: "Zoom in",
+      zoomOut: "Zoom out",
+      close: "Close",
+      prev: "Previous",
+      next: "Next",
+      cards: [
+        {
+          title: "SQL - Advanced",
+          issuer: "HackerRank"
+        },
+      ]
+    },
     footer: {
       designed: "Designed and Developed by Nhoxanboc",
       copyright: "Copyright ©",
@@ -118,6 +137,7 @@ const translations = {
       about: "Giới thiệu",
       projects: "Dự án",
       resume: "Hồ sơ",
+      certifications: "Chứng chỉ",
       knowledge: "Ghi chú",
       theme: "Giao diện",
       language: "Ngôn ngữ"
@@ -206,6 +226,24 @@ const translations = {
         {
           title: "Portfolio Cá nhân",
           description: "Trang portfolio này — xây dựng bằng React, triển khai trên Vercel. Tích hợp chế độ tối/sáng, hỗ trợ song ngữ EN/VI, blog dạng đồ thị kiến thức tương tác, xem CV dạng PDF và chatbot AI sử dụng Qwen qua Hugging Face."
+        },
+      ]
+    },
+    certifications: {
+      heading: "Chứng chỉ",
+      headingPurple: "của tôi",
+      subtext: "Nhấp vào một chứng chỉ để xem toàn màn hình — phóng to / thu nhỏ để xem chi tiết.",
+      view: "Xem chứng chỉ",
+      viewPdf: "Xem PDF",
+      zoomIn: "Phóng to",
+      zoomOut: "Thu nhỏ",
+      close: "Đóng",
+      prev: "Trước",
+      next: "Sau",
+      cards: [
+        {
+          title: "SQL - Nâng cao",
+          issuer: "HackerRank"
         },
       ]
     },

@@ -8,6 +8,7 @@ import {
   PiUserCircleDuotone,
   PiBriefcaseDuotone,
   PiReadCvLogoDuotone,
+  PiCertificateDuotone,
   PiNotepadDuotone,
   PiSunDuotone,
   PiMoonDuotone,
@@ -110,6 +111,19 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
               >
                 <PiReadCvLogoDuotone size={22} />
                 <span className="nav-label">{t.resume}</span>
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/certifications"
+                onClick={() => updateExpanded(false)}
+                aria-label={t.certifications}
+                data-tooltip={t.certifications}
+              >
+                <PiCertificateDuotone size={22} />
+                <span className="nav-label">{t.certifications}</span>
               </Nav.Link>
             </Nav.Item>
 
