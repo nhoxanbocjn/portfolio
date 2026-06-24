@@ -113,6 +113,14 @@ const translations = {
           title: "SQL - Advanced",
           issuer: "HackerRank"
         },
+        {
+          title: "Introduction Spark Developer",
+          issuer: "Databricks"
+        },
+          {
+          title: "Github Foundations (GH-900)",
+          issuer: "Github"
+        },
       ]
     },
     footer: {
@@ -244,6 +252,14 @@ const translations = {
         {
           title: "SQL - Nâng cao",
           issuer: "HackerRank"
+        },
+        {
+          title: "Giới thiệu Spark Developer",
+          issuer: "Databricks"
+        },
+          {
+          title: "Github Foundations (GH-900)",
+          issuer: "Github"
         },
       ]
     },

@@ -8,6 +8,9 @@ import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
 import sqlAdvancedCert from "../../Assets/Certifications/sql_advanced_certificate.jpg";
+import sparkDeveloperCert from "../../Assets/Certifications/databricks_intro_spark.png";
+import gh900 from "../../Assets/Certifications/gh900.jpg";
+
 
 // Add a new certificate by dropping its image into src/Assets/Certifications/,
 // importing it above, and adding an entry here. The title/issuer/date text lives
@@ -18,6 +21,16 @@ const CERT_META = [
     // pdf: sqlAdvancedPdf,   // optional — link to the original PDF
     color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   },
+  {
+    img: sparkDeveloperCert,
+    // pdf: sparkDeveloperPdf,   // optional — link to the original PDF
+    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
+  },
+  {
+    img: gh900,
+    // pdf: gh900Pdf,   // optional — link to the original PDF
+    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
+  }
 ];
 
 const MIN_ZOOM = 1;
@@ -93,8 +106,6 @@ function Certifications() {
         <h1 className="project-heading">
           {t.heading} <strong className="accent">{t.headingPurple} </strong>
         </h1>
-        <p className="project-subtext">{t.subtext}</p>
-
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {CERT_META.map((meta, i) => (
             <Col key={i} md={4} className="cert-col">
