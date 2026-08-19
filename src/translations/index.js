@@ -117,9 +117,13 @@ const translations = {
           title: "Introduction Spark Developer",
           issuer: "Databricks"
         },
-          {
+        {
           title: "Github Foundations (GH-900)",
           issuer: "Github"
+        },
+        {
+          title: "Fabric Data Engineer Associate",
+          issuer: "Microsoft"
         },
       ]
     },
@@ -257,9 +261,13 @@ const translations = {
           title: "Giới thiệu Spark Developer",
           issuer: "Databricks"
         },
-          {
+        {
           title: "Github Foundations (GH-900)",
           issuer: "Github"
+        },
+        {
+          title: "Fabric Data Engineer Associate",
+          issuer: "Microsoft"
         },
       ]
     },

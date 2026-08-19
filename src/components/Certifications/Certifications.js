@@ -10,6 +10,7 @@ import translations from "../../translations";
 import sqlAdvancedCert from "../../Assets/Certifications/sql_advanced_certificate.jpg";
 import sparkDeveloperCert from "../../Assets/Certifications/databricks_intro_spark.png";
 import gh900 from "../../Assets/Certifications/gh900.jpg";
+import fabrcDataEngineer from "../../Assets/Certifications/farbic_data_engineer.jpg";
 
 
 // Add a new certificate by dropping its image into src/Assets/Certifications/,
@@ -29,6 +30,11 @@ const CERT_META = [
   {
     img: gh900,
     // pdf: gh900Pdf,   // optional — link to the original PDF
+    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
+  },
+  {
+    img: fabrcDataEngineer,
+    // pdf: fabrcDataEngineerPdf,   // optional — link to the original PDF
     color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   }
 ];
