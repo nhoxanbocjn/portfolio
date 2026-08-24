@@ -1,15 +1,11 @@
 html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
+  --section-background-color: linear-gradient(to bottom left,
+      rgba(17, 16, 16, 0.582),
+      rgba(12, 8, 24, 0.904));
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
+  --image-gradient: linear-gradient(to bottom left,
+      rgba(17, 16, 16, 0.678),
+      rgba(12, 10, 22, 0.863));
 
   --imp-text-color: #15cfe0;
 }
@@ -71,19 +67,18 @@ button:focus {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(37, 30, 42, 0.994)
- ;
+  background: rgba(37, 30, 42, 0.994);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:  #f5f1f1;
+  background: #f5f1f1;
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:   #8a8787;
+  background: #8a8787;
   border-radius: 12px;
 }
 
@@ -162,10 +157,12 @@ button:focus {
     font-size: 1.4rem !important;
     background-color: #181a27 !important;
   }
+
   .navbar-nav .nav-item a::after {
     display: none !important;
   }
 }
+
 .navbar-brand {
   color: rgb(250, 250, 250) !important;
 }
@@ -225,10 +222,14 @@ button:focus {
 /* Home section */
 /* --------- */
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
@@ -236,28 +237,38 @@ button:focus {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
+  }
+
+  /* The following five values can be played with to make the waving more or less extreme */
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
-  } /* Reset for the last half to pause */
+  }
+
+  /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
   }
 }
+
 #tsparticles {
   position: absolute !important;
   top: 0 !important;
@@ -305,6 +316,7 @@ button:focus {
   color: #15cfe0 !important;
   font-weight: 600 !important;
 }
+
 .Typewriter__cursor {
   font-size: 2.4em !important;
   color: #15cfe0 !important;
@@ -316,6 +328,7 @@ button:focus {
     font-weight: 500 !important;
     position: absolute !important;
   }
+
   .Typewriter__cursor {
     display: none !important;
   }
@@ -370,6 +383,7 @@ button:focus {
   position: relative !important;
   padding-inline-start: 0 !important;
 }
+
 .home-foot-section {
   position: relative;
   background-color: #0c0818 !important;
@@ -378,6 +392,7 @@ button:focus {
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
+
 .home-social-icons {
   position: relative !important;
   display: inline-block !important;
@@ -433,8 +448,9 @@ button:focus {
   background-color: rgb(10, 4, 22);
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
+  padding-bottom: 8px !important;
 }
+
 .footer-copywright {
   text-align: center !important;
 }
@@ -460,6 +476,7 @@ button:focus {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
+
 .footer-icons {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
@@ -469,6 +486,7 @@ button:focus {
 .blockquote-footer {
   color: #15cfe0 !important;
 }
+
 /* --------- */
 /* Projects */
 /* --------- */
@@ -505,10 +523,11 @@ button:focus {
   flex-direction: column;
   flex: 1;
 }
+
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px  rgba(253, 2, 2, 0.65)  !important;
+  box-shadow: 0 4px 4px 5px rgba(253, 2, 2, 0.65) !important;
 }
 
 .project-card-buttons {
@@ -741,10 +760,12 @@ button:focus {
   background-color: #ff000086 !important;
   border-color: #ff000086 !important;
 }
+
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;
 }
+
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
@@ -803,6 +824,7 @@ button:focus {
   overflow: hidden !important;
   outline: 2.2px solid rgba(255, 2, 2, 0.883) !important;
 }
+
 .tech-icon-images {
   height: 1.6rem;
   line-height: 1.6 !important;
@@ -825,6 +847,7 @@ button:focus {
     padding-top: 0 !important;
   }
 }
+
 /* --------- */
 /* Resume */
 /* --------- */
@@ -862,6 +885,7 @@ button:focus {
     padding-left: 15px !important;
   }
 }
+
 .resume .resume-title {
   font-size: 2em;
   font-weight: 700;
@@ -938,10 +962,12 @@ button:focus {
   animation-fill-mode: forwards;
   animation-duration: 0.85s;
 }
+
 @keyframes likeAnimation {
   0% {
     transform: scale(1.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -965,6 +991,7 @@ button:focus {
   background-color: #ff000086 !important;
   border-color: #ff000086 !important;
 }
+
 .fork-btn-inner::after {
   display: none !important;
 }
@@ -984,9 +1011,17 @@ button:focus {
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* --------- */
@@ -1110,6 +1145,7 @@ button:focus {
 }
 
 @media (max-width: 767px) {
+
   /* Stack items vertically inside the collapsed mobile menu */
   .nav-icon-only {
     flex-direction: column;
@@ -1118,6 +1154,7 @@ button:focus {
     border-radius: 12px;
     padding: 8px;
   }
+
   .nav-icon-only .nav-link {
     justify-content: flex-start !important;
     height: 42px;
@@ -1125,6 +1162,7 @@ button:focus {
     gap: 12px;
     border-radius: 8px;
   }
+
   /* Show the text label on mobile */
   .nav-label {
     display: inline-block;
@@ -1132,16 +1170,19 @@ button:focus {
     font-weight: 500;
     letter-spacing: 0.2px;
   }
+
   /* Horizontal divider line between sections */
   .nav-divider {
     width: 100%;
     height: 1px;
     margin: 6px 0;
   }
+
   /* Tooltips would clip on mobile — disable since the label is visible */
   .nav-icon-only .nav-link[data-tooltip]::before {
     display: none;
   }
+
   /* Lang pill keeps its compact width even in mobile rows */
   .nav-icon-only .nav-lang-btn {
     min-width: 0;
@@ -1418,6 +1459,7 @@ button:focus {
 [data-theme="light"] .footer-icons a {
   color: #1a1a2e !important;
 }
+
 /* --------- */
 /* Chatbot   */
 /* --------- */
@@ -1467,8 +1509,15 @@ button:focus {
 }
 
 @keyframes chatbot-slide-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .chatbot-header {
@@ -1817,8 +1866,13 @@ button:focus {
 }
 
 @keyframes certFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .cert-lb-figure {
@@ -1917,8 +1971,13 @@ button:focus {
   background: rgba(21, 207, 224, 0.7);
 }
 
-.cert-lb-prev { left: 20px; }
-.cert-lb-next { right: 20px; }
+.cert-lb-prev {
+  left: 20px;
+}
+
+.cert-lb-next {
+  right: 20px;
+}
 
 .cert-lb-toolbar {
   position: absolute;
@@ -1986,9 +2045,17 @@ button:focus {
 }
 
 @media (max-width: 768px) {
-  .cert-lb-nav { display: none; }
-  .cert-lb-toolbar { bottom: 14px; }
-  .cert-preview { display: none; }
+  .cert-lb-nav {
+    display: none;
+  }
+
+  .cert-lb-toolbar {
+    bottom: 14px;
+  }
+
+  .cert-preview {
+    display: none;
+  }
 }
 
 /* ----- Light mode overrides ----- */
@@ -2015,4 +2082,200 @@ button:focus {
 
 [data-theme="light"] .cert-card-issuer {
   color: rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- Book-style page turn (v4 — polished, faster/snappier) ---------- */
+body {
+  overflow-x: hidden;
+}
+
+.book-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  perspective: 2600px;
+}
+
+.page-book,
+.page-enter-right,
+.page-enter-left {
+  position: relative;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.page-book::before {
+  content: "";
+  position: absolute;
+  inset: -2% -2% -6% -2%;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  filter: blur(18px);
+}
+
+.page-book::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  mix-blend-mode: soft-light;
+}
+
+.page-enter-right {
+  transform-origin: 20% center;
+  animation: pageFlipNext 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+.page-enter-right::before {
+  animation: pageLiftShadow 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+.page-enter-right::after {
+  background: linear-gradient(115deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.5) 48%,
+      rgba(255, 255, 255, 0) 66%);
+  background-size: 220% 100%;
+  animation: pageSheenNext 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+.page-enter-left {
+  transform-origin: 80% center;
+  animation: pageFlipPrev 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+.page-enter-left::before {
+  animation: pageLiftShadow 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+.page-enter-left::after {
+  background: linear-gradient(115deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.5) 48%,
+      rgba(255, 255, 255, 0) 66%);
+  background-size: 220% 100%;
+  animation: pageSheenPrev 0.55s cubic-bezier(0.3, 1.4, 0.35, 1) both;
+}
+
+/* Same choreography as before (rise → arc → settle) but compressed into
+   fewer perceptible stages so it reads as quick and snappy rather than
+   a slow-motion flip. Blur is reduced since heavy blur over a short
+   duration reads as a glitch rather than motion. */
+@keyframes pageFlipNext {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) translateX(26px) scale(0.96) rotateY(-30deg) rotateX(3deg);
+    filter: blur(3px) brightness(1.06);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateY(-2px) translateX(-2px) scale(1.005) rotateY(3deg) rotateX(0deg);
+    filter: blur(0px) brightness(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1) rotateY(0deg) rotateX(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+@keyframes pageFlipPrev {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) translateX(-26px) scale(0.96) rotateY(30deg) rotateX(3deg);
+    filter: blur(3px) brightness(1.06);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateY(-2px) translateX(2px) scale(1.005) rotateY(-3deg) rotateX(0deg);
+    filter: blur(0px) brightness(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1) rotateY(0deg) rotateX(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+@keyframes pageLiftShadow {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(6px);
+  }
+
+  40% {
+    opacity: 0.75;
+    transform: scale(1.01) translateY(2px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pageSheenNext {
+  0% {
+    opacity: 0;
+    background-position: 100% 0;
+  }
+
+  40% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: -30% 0;
+  }
+}
+
+@keyframes pageSheenPrev {
+  0% {
+    opacity: 0;
+    background-position: -30% 0;
+  }
+
+  40% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .page-enter-right,
+  .page-enter-left {
+    animation: none;
+  }
+
+  .page-book::before,
+  .page-book::after {
+    animation: none;
+    opacity: 0;
+  }
 }
