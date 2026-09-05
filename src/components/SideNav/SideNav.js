@@ -24,7 +24,7 @@ function SideNav() {
     >
       {SECTION_NAV.map((item) => {
         const label = t[item.key];
-        const isActive = !item.external && active === item.id;
+        const isActive = active === item.id;
         return (
           <a
             key={item.id}

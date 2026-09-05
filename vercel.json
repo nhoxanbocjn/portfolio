@@ -1,10 +1,5 @@
 {
   "rewrites": [
-    { "source": "/about", "destination": "/" },
-    { "source": "/project", "destination": "/" },
-    { "source": "/resume", "destination": "/" },
-    { "source": "/certifications", "destination": "/" },
-    { "source": "/blog", "destination": "/" },
     { "source": "/((?!api/).*)", "destination": "/" }
   ]
 }

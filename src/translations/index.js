@@ -6,7 +6,7 @@ const translations = {
       projects: "Projects",
       resume: "Resume",
       certifications: "Certifications",
-      knowledge: "Notes",
+      knowledge: "Knowledge",
       theme: "Theme",
       language: "Language"
     },
@@ -130,7 +130,7 @@ const translations = {
           time: "Jun 2026"
         },
         {
-          title: "Fabric Data Engineer Associate",
+          title: "Fabric Data Engineer Associate (DP-700)",
           issuer: "Microsoft",
           time: "Aug 2026"
         },
@@ -139,7 +139,7 @@ const translations = {
     footer: {
       designed: "Designed and Developed by Nhoxanboc",
       copyright: "Copyright ©",
-      name: "Nhøx"
+      name: "Nhoxanboc"
     },
     blogCta: {
       heading: "Fresh From My",
@@ -165,7 +165,7 @@ const translations = {
       projects: "Dự án",
       resume: "Hồ sơ",
       certifications: "Chứng chỉ",
-      knowledge: "Ghi chú",
+      knowledge: "Kiến thức",
       theme: "Giao diện",
       language: "Ngôn ngữ"
     },
@@ -276,22 +276,22 @@ const translations = {
         {
           title: "SQL - Nâng cao",
           issuer: "HackerRank",
-          time: "Mar 2024"
+          time: "T3 2024"
         },
         {
           title: "Giới thiệu Spark Developer",
           issuer: "Databricks",
-          time: "Jun 2026"
+          time: "T6 2026"
         },
         {
           title: "Github Foundations (GH-900)",
           issuer: "Github",
-          time: "Jun 2026"
+          time: "T6 2026"
         },
         {
-          title: "Fabric Data Engineer Associate",
+          title: "Fabric Data Engineer Associate (DP-700)",
           issuer: "Microsoft",
-          time: "Aug 2026"
+          time: "T8 2026"
         },
       ]
     },

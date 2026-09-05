@@ -18,6 +18,7 @@ html {
   --on-accent: #071018;
   --navbar-bg: rgba(10, 15, 28, 0.78);
   --footer-bg: #070b16;
+  --footer-h: 60px;
   --tooltip-bg: rgba(15, 23, 42, 0.95);
   --prompt: #4ade80;
   --shadow: 0 10px 30px rgba(2, 8, 20, 0.45);
@@ -43,6 +44,7 @@ html[data-theme="light"] {
   --on-accent: #ffffff;
   --navbar-bg: rgba(244, 247, 251, 0.85);
   --footer-bg: #dde3f0;
+  --footer-h: 60px;
   --tooltip-bg: rgba(15, 23, 42, 0.92);
   --prompt: #16a34a;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -67,6 +69,10 @@ body {
 .App {
   background-color: var(--bg);
   color: var(--text);
+}
+
+main {
+  padding-bottom: var(--footer-h);
 }
 
 ::selection {
@@ -657,44 +663,6 @@ button:focus {
 .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
-}
-
-/* ----- Home social block (bottom of page, inside footer) ----- */
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: var(--text) !important;
-}
-
-.home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
-}
-
-.home-social-icons {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 44px !important;
-  height: 44px !important;
-  font-size: 1.15em !important;
-  background: var(--surface) !important;
-  border: 1px solid var(--border);
-  border-radius: 50% !important;
-  color: var(--text) !important;
-  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease !important;
-}
-
-.home-social-icons:hover {
-  transform: translateY(-4px);
-  color: var(--accent) !important;
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-hover);
 }
 
 .social-icons {
@@ -1414,7 +1382,7 @@ button:focus {
 .back-to-top {
   position: fixed;
   left: 22px;
-  bottom: 22px;
+  bottom: calc(var(--footer-h) + 22px);
   z-index: 8999;
   width: 44px;
   height: 44px;
@@ -1489,13 +1457,10 @@ button:focus {
 }
 
 .side-nav a .side-label {
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  white-space: nowrap;
   font-size: 0.8rem;
   font-weight: 500;
-  transition: max-width 0.25s ease, opacity 0.25s ease, padding 0.25s ease;
+  padding-left: 8px;
+  padding-right: 4px;
 }
 
 .side-nav a:hover,
@@ -1505,31 +1470,23 @@ button:focus {
   border-color: var(--border-accent);
 }
 
-.side-nav a:hover .side-label,
-.side-nav a.side-nav-active .side-label {
-  max-width: 150px;
-  opacity: 1;
-  padding-left: 8px;
-  padding-right: 4px;
-}
-
 /* ============================================================
-   Footer (social block + footer bar, in-flow)
+   Footer (compact single row, pinned to the viewport bottom —
+   always visible like the header)
    ============================================================ */
 .footer-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1020;
   background-color: var(--footer-bg);
   border-top: 1px solid var(--border);
 }
 
-.footer-social {
-  padding-top: 70px !important;
-  padding-bottom: 50px !important;
-}
-
 .footer {
-  border-top: 1px solid var(--border);
-  padding-top: 18px !important;
-  padding-bottom: 14px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 .footer-copywright {
@@ -1552,10 +1509,10 @@ button:focus {
 }
 
 .footer h3 {
-  font-size: 1em;
+  font-size: 0.95rem;
   color: var(--text) !important;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
+  margin: 0 !important;
+  font-weight: 500;
 }
 
 .footer-icons {
@@ -1563,7 +1520,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  margin: 0.5em 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
   list-style: none;
 }
@@ -1574,6 +1531,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   padding: 6px;
+  font-size: 1.15rem;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 

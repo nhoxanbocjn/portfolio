@@ -20,7 +20,9 @@ function Reveal({ children, delay = 0, className = "" }) {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      // threshold 0 (any pixel) + rootMargin: tall wrappers (e.g. a long
+      // project list) must never get stuck invisible on short viewports.
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();

@@ -17,41 +17,10 @@ const SOCIAL_LINKS = [
 function Footer() {
   const lang = useLang();
   const t = translations[lang].footer;
-  const th = translations[lang].home;
   const year = new Date().getFullYear();
 
   return (
     <footer className="footer-wrap">
-      <Container fluid className="footer-social">
-        <Container>
-          <Row>
-            <Col md={12} className="home-about-social">
-              <h1>{th.findMe}</h1>
-              <p>
-                {th.connectPrefix}{" "}
-                <span className="accent">{th.connectBold} </span>
-                {th.connectSuffix}
-              </p>
-              <ul className="home-about-social-links">
-                {SOCIAL_LINKS.map(({ href, Icon, label }) => (
-                  <li key={label} className="social-icons">
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={label}
-                      className="icon-colour home-social-icons"
-                    >
-                      <Icon />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-
       <Container fluid className="footer">
         <Row>
           <Col md="4" className="footer-copywright">

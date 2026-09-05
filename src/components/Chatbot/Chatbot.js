@@ -7,11 +7,12 @@ import translations from "../../translations";
 const FAB_SIZE = 54;
 const PANEL_W = 350;
 const PANEL_H = 600;
+const FOOTER_H = 64;
 
 function getInitialPos() {
   return {
     x: window.innerWidth - FAB_SIZE - 28,
-    y: window.innerHeight - FAB_SIZE - 28,
+    y: window.innerHeight - FAB_SIZE - FOOTER_H - 16,
   };
 }
 
@@ -45,7 +46,7 @@ function Chatbot() {
     moved.current = true;
     setPos({
       x: Math.max(0, Math.min(window.innerWidth - FAB_SIZE, e.clientX - offset.current.x)),
-      y: Math.max(0, Math.min(window.innerHeight - FAB_SIZE, e.clientY - offset.current.y)),
+      y: Math.max(0, Math.min(window.innerHeight - FAB_SIZE - FOOTER_H, e.clientY - offset.current.y)),
     });
   }, []);
 
@@ -57,7 +58,7 @@ function Chatbot() {
     const touch = e.touches[0];
     setPos({
       x: Math.max(0, Math.min(window.innerWidth - FAB_SIZE, touch.clientX - offset.current.x)),
-      y: Math.max(0, Math.min(window.innerHeight - FAB_SIZE, touch.clientY - offset.current.y)),
+      y: Math.max(0, Math.min(window.innerHeight - FAB_SIZE - FOOTER_H, touch.clientY - offset.current.y)),
     });
   }, []);
 

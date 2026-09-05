@@ -29,6 +29,31 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
 
   const closeMenu = () => updateExpanded(false);
 
+  const renderLinks = () =>
+    SECTION_NAV.map((item) => {
+      const label = t[item.key];
+      return (
+        <Nav.Item key={item.id}>
+          <Nav.Link
+            href={item.external ? item.href : `#${item.id}`}
+            {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
+            onClick={closeMenu}
+            aria-label={label}
+            data-tooltip={label}
+            className={active === item.id ? "nav-link-active" : ""}
+          >
+            <item.Icon size={22} />
+            <span className="nav-label">
+              {label}
+              {item.external && (
+                <LuExternalLink size={13} className="ms-1 external-icon" />
+              )}
+            </span>
+          </Nav.Link>
+        </Nav.Item>
+      );
+    });
+
   return (
     <Navbar
       expanded={expand}
@@ -86,29 +111,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto nav-icon-only">
-            {SECTION_NAV.map((item) => {
-              const label = t[item.key];
-              return (
-                <Nav.Item key={item.id}>
-                  <Nav.Link
-                    href={item.external ? item.href : `#${item.id}`}
-                    {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                    onClick={closeMenu}
-                    aria-label={label}
-                    data-tooltip={label}
-                    className={!item.external && active === item.id ? "nav-link-active" : ""}
-                  >
-                    <item.Icon size={22} />
-                    <span className="nav-label">
-                      {label}
-                      {item.external && (
-                        <LuExternalLink size={13} className="ms-1 external-icon" />
-                      )}
-                    </span>
-                  </Nav.Link>
-                </Nav.Item>
-              );
-            })}
+            {renderLinks()}
           </Nav>
         </Navbar.Collapse>
       </Container>

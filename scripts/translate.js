@@ -53,8 +53,9 @@ async function translateObject(en, vi, forceAll = false) {
     const viVal = vi ? vi[key] : undefined;
 
     if (typeof enVal === "string") {
-      if (!forceAll && viVal && viVal !== enVal) {
-        // already has a real VI translation — keep it
+      if (!forceAll && viVal) {
+        // already has a VI string — keep it (even when identical to EN:
+        // proper nouns like "Nhøx" must not be "re-translated")
         result[key] = viVal;
       } else {
         process.stdout.write(`  translating "${key}"... `);
@@ -67,7 +68,7 @@ async function translateObject(en, vi, forceAll = false) {
         const item = enVal[i];
         const viItem = viVal ? viVal[i] : undefined;
         if (typeof item === "string") {
-          if (!forceAll && viItem && viItem !== item) {
+          if (!forceAll && viItem) {
             result[key].push(viItem);
           } else {
             process.stdout.write(`  translating "${key}[${i}]"... `);

@@ -11,7 +11,7 @@ function BlogCta() {
   const t = translations[lang].blogCta;
 
   return (
-    <Container fluid className="blog-cta-section" id="blog">
+    <Container fluid className="blog-cta-section" id="knowledge">
       <Container>
         <Reveal>
           <Row className="blog-cta-card" style={{ justifyContent: "center" }}>
