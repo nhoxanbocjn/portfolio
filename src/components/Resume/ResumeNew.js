@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
 import pdf from "../../Assets/CV.PDF";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
+import Reveal from "../Reveal/Reveal";
+import { useLang } from "../../context/LangContext";
+import translations from "../../translations";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
   const [numPages, setNumPages] = useState(null);
+  const lang = useLang();
+  const t = translations[lang].resume;
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -21,20 +25,13 @@ function ResumeNew() {
   }
 
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+    <Container fluid className="resume-section" id="resume">
+      <Container>
+        <Reveal>
+          <h1 className="project-heading">
+            {t.heading} <strong className="accent">{t.headingAccent}</strong>
+          </h1>
+        </Reveal>
 
         <Row className="resume">
           <Document
@@ -60,11 +57,11 @@ function ResumeNew() {
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{t.download}
           </Button>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 }
 

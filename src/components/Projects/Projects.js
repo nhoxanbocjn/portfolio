@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
+import Reveal from "../Reveal/Reveal";
 import {
   SiApacheairflow,
   SiPowerbi,
@@ -56,32 +56,34 @@ function Projects() {
   const [view, setView] = useState("card");
 
   return (
-    <Container fluid className="project-section">
-      <Particle />
+    <Container fluid className="project-section" id="projects">
       <Container>
-        <h1 className="project-heading">
-          {t.heading} <strong className="accent">{t.headingPurple} </strong>
-        </h1>
-        <p className="project-subtext">{t.subtext}</p>
+        <Reveal>
+          <h1 className="project-heading">
+            {t.heading} <strong className="accent">{t.headingPurple} </strong>
+          </h1>
+          <p className="project-subtext">{t.subtext}</p>
+        </Reveal>
 
-        <div className="project-view-toggle">
-          <button
-            className={`view-toggle-btn${view === "card" ? " active" : ""}`}
-            onClick={() => setView("card")}
-            aria-label="Card view"
-          >
-            <LuLayoutGrid />
-          </button>
-          <button
-            className={`view-toggle-btn${view === "list" ? " active" : ""}`}
-            onClick={() => setView("list")}
-            aria-label="List view"
-          >
-            <LuList />
-          </button>
-        </div>
+        <Reveal>
+          <div className="project-view-toggle">
+            <button
+              className={`view-toggle-btn${view === "card" ? " active" : ""}`}
+              onClick={() => setView("card")}
+              aria-label="Card view"
+            >
+              <LuLayoutGrid />
+            </button>
+            <button
+              className={`view-toggle-btn${view === "list" ? " active" : ""}`}
+              onClick={() => setView("list")}
+              aria-label="List view"
+            >
+              <LuList />
+            </button>
+          </div>
 
-        {view === "card" ? (
+          {view === "card" ? (
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
             {PROJECT_META.map((meta, i) => (
               <Col key={i} md={4} className="project-card">
@@ -144,6 +146,7 @@ function Projects() {
             ))}
           </div>
         )}
+        </Reveal>
       </Container>
     </Container>
   );

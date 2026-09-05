@@ -17,7 +17,7 @@ function Particle() {
 
         particles: {
           number: {
-            value: 80,
+            value: 40,
             density: {
               enable: true,
               area: 2530,
@@ -43,7 +43,7 @@ function Particle() {
           },
 
           size: {
-            value: 3,
+            value: 2.5,
             random: true,
           },
 
@@ -53,7 +53,7 @@ function Particle() {
 
           move: {
             enable: true,
-            speed: 3,
+            speed: 1.2,
             direction: "bottom",
             outModes: {
               default: "out",
@@ -76,11 +76,11 @@ function Particle() {
           },
           modes: {
             repulse: {
-              distance: 200,
+              distance: 120,
               duration: 0.4,
             },
             push: {
-              quantity: 4,
+              quantity: 2,
             },
           },
         },

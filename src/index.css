@@ -5,6 +5,5 @@ body {
   font-family: "Outfit", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(20, 24, 41), rgb(20 15 35));
   line-height: 1.6;
 }

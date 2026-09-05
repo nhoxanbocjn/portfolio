@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Row } from "react-bootstrap";
+import Reveal from "../Reveal/Reveal";
 import { useTheme } from "../../context/ThemeContext";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
@@ -27,25 +28,21 @@ function Github() {
   const t = translations[lang].github;
 
   return (
-    <Row
-      style={{
-        justifyContent: "center",
-        paddingBottom: "10px",
-        color: theme === "light" ? "#1a1a2e" : "white",
-      }}
-    >
-      <h1 className="project-heading pb-4" style={{ paddingBottom: "20px" }}>
-        {t.headingPre} <strong className="accent">{t.headingAccent}</strong>
-      </h1>
-      <GitHubCalendar
-        username="nhoxanbocjn"
-        year={2026}
-        blockSize={30}
-        blockMargin={10}
-        fontSize={20}
-        theme={theme === "light" ? lightTheme : darkTheme}
-      />
-    </Row>
+    <Reveal>
+      <Row className="github-section">
+        <h1 className="project-heading pb-4" style={{ paddingBottom: "20px" }}>
+          {t.headingPre} <strong className="accent">{t.headingAccent}</strong>
+        </h1>
+        <GitHubCalendar
+          username="nhoxanbocjn"
+          year={2026}
+          blockSize={30}
+          blockMargin={10}
+          fontSize={20}
+          theme={theme === "light" ? lightTheme : darkTheme}
+        />
+      </Row>
+    </Reveal>
   );
 }
 

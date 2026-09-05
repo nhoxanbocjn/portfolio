@@ -4,10 +4,6 @@ import homeLogo from "../../Assets/avatar_new.png";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { AiFillGithub } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
 import Tilt from "react-parallax-tilt";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
@@ -49,7 +45,7 @@ function Home() {
               </div>
             </Col>
 
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="hero-avatar">
               <Tilt>
                 <img src={homeLogo} alt="home pic" className="img-fluid" />
               </Tilt>
@@ -58,60 +54,6 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
-      <Container  fluid className="home-foot-section pt-0"  id = "home" >
-        <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
-          <Col md={12} className="home-about-social">
-            <h1>{t.findMe}</h1>
-            <p>
-              {t.connectPrefix}{" "}
-              <span className="accent">{t.connectBold} </span>
-              {t.connectSuffix}
-            </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/nhoxanbocjn"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/nguyen-le-5b06b4252/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://x.com/Nguyen252845"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <FaXTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="mailto:letukhoinguyen@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <SiGmail />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
     </section>
   );
 }

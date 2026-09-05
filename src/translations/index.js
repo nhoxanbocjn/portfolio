@@ -93,9 +93,14 @@ const translations = {
         },
         {
           title: "Personal Portfolio",
-          description: "This portfolio website — built with React and deployed on Vercel. Features a dark/light theme, bilingual EN/VI support, an interactive knowledge graph blog, a PDF resume viewer, and an AI chatbot powered by Qwen via Hugging Face."
+          description: "This portfolio website — built with React and deployed on Vercel. Features a dark/light theme, bilingual EN/VI support, a PDF resume viewer, and an AI chatbot powered by Qwen via Hugging Face."
         },
       ]
+    },
+    resume: {
+      heading: "My",
+      headingAccent: "Resume",
+      download: "Download CV"
     },
     certifications: {
       heading: "My",
@@ -111,19 +116,23 @@ const translations = {
       cards: [
         {
           title: "SQL - Advanced",
-          issuer: "HackerRank"
+          issuer: "HackerRank",
+          time: "Mar 2024"
         },
         {
           title: "Introduction Spark Developer",
-          issuer: "Databricks"
+          issuer: "Databricks",
+          time: "Jun 2026"
         },
         {
           title: "Github Foundations (GH-900)",
-          issuer: "Github"
+          issuer: "Github",
+          time: "Jun 2026"
         },
         {
           title: "Fabric Data Engineer Associate",
-          issuer: "Microsoft"
+          issuer: "Microsoft",
+          time: "Aug 2026"
         },
       ]
     },
@@ -131,6 +140,12 @@ const translations = {
       designed: "Designed and Developed by Nhoxanboc",
       copyright: "Copyright ©",
       name: "Nhøx"
+    },
+    blogCta: {
+      heading: "Fresh From My",
+      headingAccent: "Notes",
+      subtitle: "I write about data engineering, analytics, and the lessons learned along the way — read the full posts on my blog.",
+      cta: "Visit the Blog"
     },
     chatbot: {
       title: "Ask about Nguyen Le",
@@ -237,9 +252,14 @@ const translations = {
         },
         {
           title: "Portfolio Cá nhân",
-          description: "Trang portfolio này — xây dựng bằng React, triển khai trên Vercel. Tích hợp chế độ tối/sáng, hỗ trợ song ngữ EN/VI, blog dạng đồ thị kiến thức tương tác, xem CV dạng PDF và chatbot AI sử dụng Qwen qua Hugging Face."
+          description: "Trang portfolio này — xây dựng bằng React, triển khai trên Vercel. Tích hợp chế độ tối/sáng, hỗ trợ song ngữ EN/VI, xem CV dạng PDF và chatbot AI sử dụng Qwen qua Hugging Face."
         },
       ]
+    },
+    resume: {
+      heading: "Hồ sơ",
+      headingAccent: "của tôi",
+      download: "Tải CV"
     },
     certifications: {
       heading: "Chứng chỉ",
@@ -255,26 +275,36 @@ const translations = {
       cards: [
         {
           title: "SQL - Nâng cao",
-          issuer: "HackerRank"
+          issuer: "HackerRank",
+          time: "Mar 2024"
         },
         {
           title: "Giới thiệu Spark Developer",
-          issuer: "Databricks"
+          issuer: "Databricks",
+          time: "Jun 2026"
         },
         {
           title: "Github Foundations (GH-900)",
-          issuer: "Github"
+          issuer: "Github",
+          time: "Jun 2026"
         },
         {
           title: "Fabric Data Engineer Associate",
-          issuer: "Microsoft"
+          issuer: "Microsoft",
+          time: "Aug 2026"
         },
       ]
     },
     footer: {
-      designed: "Thiết kế và Phát triển bởi Nhoxanboc",
-      copyright: "Bản quyền ©",
-      name: "Nhøx"
+      designed: "Designed and Developed by Nhoxanboc",
+      copyright: "Copyright ©",
+      name: "Nhoxanboc"
+    },
+    blogCta: {
+      heading: "Những",
+      headingAccent: "Ghi chú",
+      subtitle: "Tôi viết về kỹ thuật dữ liệu, phân tích và những bài học rút ra trên hành trình — đọc bài viết đầy đủ trên blog của tôi.",
+      cta: "Xem Blog"
     },
     chatbot: {
       title: "Ask about Nguyen Le",

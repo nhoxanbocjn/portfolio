@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
+import { Container } from "react-bootstrap";
+import Reveal from "../Reveal/Reveal";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 import { FiFileText } from "react-icons/fi";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
@@ -14,28 +14,24 @@ import fabrcDataEngineer from "../../Assets/Certifications/farbic_data_engineer.
 
 
 // Add a new certificate by dropping its image into src/Assets/Certifications/,
-// importing it above, and adding an entry here. The title/issuer/date text lives
+// importing it above, and adding an entry here. The title/issuer/time text lives
 // in src/translations/index.js under `certifications.cards` (same order as below).
 const CERT_META = [
   {
     img: sqlAdvancedCert,
     // pdf: sqlAdvancedPdf,   // optional — link to the original PDF
-    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   },
   {
     img: sparkDeveloperCert,
     // pdf: sparkDeveloperPdf,   // optional — link to the original PDF
-    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   },
   {
     img: gh900,
     // pdf: gh900Pdf,   // optional — link to the original PDF
-    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   },
   {
     img: fabrcDataEngineer,
     // pdf: fabrcDataEngineerPdf,   // optional — link to the original PDF
-    color: "linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%)",
   }
 ];
 
@@ -106,39 +102,35 @@ function Certifications() {
   const activeCard = active !== null ? t.cards[active] : null;
 
   return (
-    <Container fluid className="cert-section">
-      <Particle />
+    <Container fluid className="cert-section" id="certifications">
       <Container>
-        <h1 className="project-heading">
-          {t.heading} <strong className="accent">{t.headingPurple} </strong>
-        </h1>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {CERT_META.map((meta, i) => (
-            <Col key={i} md={4} className="cert-col">
+        <Reveal>
+          <h1 className="project-heading">
+            {t.heading} <strong className="accent">{t.headingPurple} </strong>
+          </h1>
+        </Reveal>
+        <Reveal>
+          <div className="cert-list">
+            {CERT_META.map((meta, i) => (
               <button
+                key={i}
                 type="button"
-                className="cert-card"
+                className="cert-row"
                 onClick={() => openLightbox(i)}
                 aria-label={`${t.view}: ${t.cards[i].title}`}
               >
-                <div className="cert-thumb" style={{ background: meta.color }}>
+                <span className="cert-row-time">{t.cards[i].time}</span>
+                <span className="cert-row-info">
+                  <span className="cert-row-title">{t.cards[i].title}</span>
+                  <span className="cert-row-issuer">{t.cards[i].issuer}</span>
+                </span>
+                <span className="cert-row-thumb">
                   <img src={meta.img} alt={t.cards[i].title} loading="lazy" />
-                </div>
-                <div
-                  className="cert-preview"
-                  style={{ background: meta.color }}
-                  aria-hidden="true"
-                >
-                  <img src={meta.img} alt="" />
-                </div>
-                <div className="cert-card-body">
-                  <h5 className="cert-card-title">{t.cards[i].title}</h5>
-                  <p className="cert-card-issuer">{t.cards[i].issuer}</p>
-                </div>
+                </span>
               </button>
-            </Col>
-          ))}
-        </Row>
+            ))}
+          </div>
+        </Reveal>
       </Container>
 
       {activeCert && (

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/home_main_img.png";
 import Tilt from "react-parallax-tilt";
+import Reveal from "../Reveal/Reveal";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 
@@ -11,9 +12,10 @@ function Home2() {
   const t = translations[lang].home2;
 
   return (
-    <Container fluid className="home-about-section pt-0" id="about">
+    <Container fluid className="home-about-section pt-0">
       <Container>
-        <Row>
+        <Reveal>
+          <Row>
           <Col md={8} className="home-about-description pt-0">
             <h1 style={{ fontSize: "2.6em" }}>
               {t.headingPre}{" "}
@@ -51,6 +53,7 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
+        </Reveal>
       </Container>
     </Container>
   );

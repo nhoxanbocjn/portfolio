@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
+import Reveal from "../Reveal/Reveal";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
@@ -9,16 +9,15 @@ import Tilt from "react-parallax-tilt";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
 import Github from "./Github";
+
 function About() {
   const lang = useLang();
   const t = translations[lang].about;
 
   return (
-    
-     
-      <Container fluid className="about-section">
-         <Particle />
-        <Container>
+    <Container fluid className="about-section" id="about">
+      <Container>
+        <Reveal>
           <Row style={{ justifyContent: "center", padding: "10px" }}>
             <Col
               md={8}
@@ -28,10 +27,7 @@ function About() {
                 paddingBottom: "50px",
               }}
             >
-              <h1
-                style={{ fontSize: "2.1em", paddingBottom: "20px" }}
-                id="about"
-              >
+              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
                 {t.title}{" "}
                 <strong className="accent">{t.titlePurple}</strong>
               </h1>
@@ -47,22 +43,27 @@ function About() {
               </Tilt>
             </Col>
           </Row>
+        </Reveal>
+
+        <Reveal>
           <h1 className="project-heading">
             {t.skillsTitle}{" "}
             <strong className="accent">{t.skillsTitlePurple} </strong>
           </h1>
-
           <Techstack />
+        </Reveal>
 
+        <Reveal>
           <h1 className="project-heading">
             <strong className="accent">{t.toolsTitle}</strong>{" "}
             {t.toolsTitlePurple}
           </h1>
           <Toolstack />
-          <Github />
-        </Container>
+        </Reveal>
+
+        <Github />
       </Container>
-    
+    </Container>
   );
 }
 

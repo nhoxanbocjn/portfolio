@@ -1,53 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
+import { LuExternalLink } from "react-icons/lu";
 import {
-  PiHouseDuotone,
-  PiUserCircleDuotone,
-  PiBriefcaseDuotone,
-  PiReadCvLogoDuotone,
-  PiCertificateDuotone,
-  PiNotepadDuotone,
   PiSunDuotone,
   PiMoonDuotone,
 } from "react-icons/pi";
 import TypingText from "./NavType";
+import { SECTION_IDS, SECTION_NAV } from "./navSections";
+import useScrollSpy from "../hooks/useScrollSpy";
 import { useLang } from "../context/LangContext";
 import translations from "../translations";
 
 function NavBar({ theme, toggleTheme, lang, toggleLang }) {
   const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [scrolled, updateScrolled] = useState(false);
+  const active = useScrollSpy(SECTION_IDS);
   const currentLang = useLang();
   const t = translations[currentLang].nav;
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  useEffect(() => {
+    const handler = () => updateScrolled(window.scrollY >= 20);
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
-  window.addEventListener("scroll", scrollHandler);
+  const closeMenu = () => updateExpanded(false);
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      expand={false}
+      className={scrolled ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex align-items-center">
+        <Navbar.Brand href="#home" className="d-flex align-items-center">
           <span className="prompt">~ </span>
           <span>
             <TypingText text="nguy3n_l3" />
           </span>
           <span className="cursor-blink">█</span>
         </Navbar.Brand>
+
+        <div className="page-controls">
+          <Nav.Link
+            as="button"
+            className="control-btn"
+            onClick={toggleTheme}
+            aria-label={t.theme}
+            data-tooltip={t.theme}
+          >
+            {theme === "dark" ? (
+              <PiSunDuotone size={20} />
+            ) : (
+              <PiMoonDuotone size={20} />
+            )}
+          </Nav.Link>
+
+          <Nav.Link
+            as="button"
+            className="control-btn control-lang"
+            onClick={toggleLang}
+            aria-label={t.language}
+            data-tooltip={t.language}
+          >
+            <span className={lang === "en" ? "lang-active" : "lang-inactive"}>EN</span>
+            <span className="lang-sep">|</span>
+            <span className={lang === "vi" ? "lang-active" : "lang-inactive"}>VI</span>
+          </Nav.Link>
+        </div>
 
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -61,117 +85,30 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
         </Navbar.Toggle>
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto nav-icon-only" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.home}
-                data-tooltip={t.home}
-              >
-                <PiHouseDuotone size={22} />
-                <span className="nav-label">{t.home}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.about}
-                data-tooltip={t.about}
-              >
-                <PiUserCircleDuotone size={22} />
-                <span className="nav-label">{t.about}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.projects}
-                data-tooltip={t.projects}
-              >
-                <PiBriefcaseDuotone size={22} />
-                <span className="nav-label">{t.projects}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.resume}
-                data-tooltip={t.resume}
-              >
-                <PiReadCvLogoDuotone size={22} />
-                <span className="nav-label">{t.resume}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/certifications"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.certifications}
-                data-tooltip={t.certifications}
-              >
-                <PiCertificateDuotone size={22} />
-                <span className="nav-label">{t.certifications}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="http://blog.nhoxanboc.work/"
-                onClick={() => updateExpanded(false)}
-                aria-label={t.knowledge}
-                data-tooltip={t.knowledge}
-              >
-                <PiNotepadDuotone size={22} />
-                <span className="nav-label">{t.knowledge}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="nav-divider" aria-hidden="true" />
-
-            <Nav.Item>
-              <Nav.Link
-                as="button"
-                className="nav-toggle-btn"
-                onClick={toggleTheme}
-                aria-label={t.theme}
-                data-tooltip={t.theme}
-              >
-                {theme === "dark" ? (
-                  <PiSunDuotone size={22} />
-                ) : (
-                  <PiMoonDuotone size={22} />
-                )}
-                <span className="nav-label">{t.theme}</span>
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as="button"
-                className="nav-toggle-btn nav-lang-btn"
-                onClick={toggleLang}
-                aria-label={t.language}
-                data-tooltip={t.language}
-              >
-                <span className={lang === "en" ? "lang-active" : "lang-inactive"}>EN</span>
-                <span className="lang-sep">|</span>
-                <span className={lang === "vi" ? "lang-active" : "lang-inactive"}>VI</span>
-              </Nav.Link>
-            </Nav.Item>
+          <Nav className="ms-auto nav-icon-only">
+            {SECTION_NAV.map((item) => {
+              const label = t[item.key];
+              return (
+                <Nav.Item key={item.id}>
+                  <Nav.Link
+                    href={item.external ? item.href : `#${item.id}`}
+                    {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                    onClick={closeMenu}
+                    aria-label={label}
+                    data-tooltip={label}
+                    className={!item.external && active === item.id ? "nav-link-active" : ""}
+                  >
+                    <item.Icon size={22} />
+                    <span className="nav-label">
+                      {label}
+                      {item.external && (
+                        <LuExternalLink size={13} className="ms-1 external-icon" />
+                      )}
+                    </span>
+                  </Nav.Link>
+                </Nav.Item>
+              );
+            })}
           </Nav>
         </Navbar.Collapse>
       </Container>

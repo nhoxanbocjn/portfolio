@@ -10,8 +10,8 @@ A personal portfolio site with dark/light theme, EN/VI language toggle, project 
 
 ## Stack
 
-- React 17 + React Router v6
-- React-Bootstrap + plain CSS
+- React 17, single-page scroll layout (no router)
+- React-Bootstrap + plain CSS (CSS-variable theming)
 - Deployed on Vercel (auto-deploy on push to `main`)
 
 ---
@@ -40,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | Project cards (icons, colors, links) | `src/components/Projects/Projects.js` |
 | Project cards (titles, descriptions) | `src/translations/index.js` → `projects.cards[]` |
 | Resume PDF | Replace `src/Assets/CV.PDF` |
-| Blog posts & knowledge graph | `src/components/Blog/Blog.js` |
+| Blog | `src/components/BlogCta/BlogCta.js` → `BLOG_URL` (external blog) |
 | Avatar image | Replace `src/Assets/home_main_img.png` |
 
 ### 3. Adding a second language (EN/VI built in)
@@ -80,15 +80,23 @@ src/
 │   ├── Home/       # Hero section + intro
 │   ├── About/      # Bio card, skill icons, tool icons, GitHub calendar
 │   ├── Projects/   # Project cards
+│   ├── Certifications/  # Certificate gallery + lightbox
 │   ├── Resume/     # PDF viewer
-│   └── Blog/       # Knowledge graph + markdown reader
+│   ├── BlogCta/    # Banner linking to the external blog
+│   ├── Chatbot/    # Floating AI assistant widget
+│   ├── Reveal/     # Fade-in-on-scroll wrapper
+│   └── BackToTop/  # Back-to-top button
 ├── context/        # ThemeContext, LangContext
 ├── translations/   # EN / VI string maps (index.js)
 ├── Assets/         # Images and CV.PDF
-└── style.css       # All styles
+└── style.css       # All styles (CSS-variable theming)
+api/
+└── chat.js         # Vercel serverless: AI chatbot (Hugging Face)
 scripts/
 └── translate.js    # DeepL auto-translate EN → VI
 ```
+
+The site is one scrolling page: Hero → About → Projects → Certifications → Resume → Blog CTA → Footer. The Notes/Blog navbar item links to the external blog at [blog.nhoxanboc.work](https://blog.nhoxanboc.work/).
 
 ---
 
