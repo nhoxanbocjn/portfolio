@@ -53,7 +53,7 @@ const PROJECT_META = [
 function Projects() {
   const lang = useLang();
   const t = translations[lang].projects;
-  const [view, setView] = useState("card");
+  const [view, setView] = useState("list");
 
   return (
     <Container fluid className="project-section" id="projects">
@@ -68,84 +68,85 @@ function Projects() {
         <Reveal>
           <div className="project-view-toggle">
             <button
-              className={`view-toggle-btn${view === "card" ? " active" : ""}`}
-              onClick={() => setView("card")}
-              aria-label="Card view"
-            >
-              <LuLayoutGrid />
-            </button>
-            <button
               className={`view-toggle-btn${view === "list" ? " active" : ""}`}
               onClick={() => setView("list")}
               aria-label="List view"
             >
               <LuList />
             </button>
+            <button
+              className={`view-toggle-btn${view === "card" ? " active" : ""}`}
+              onClick={() => setView("card")}
+              aria-label="Card view"
+            >
+              <LuLayoutGrid />
+            </button>
+
           </div>
 
           {view === "card" ? (
-          <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-            {PROJECT_META.map((meta, i) => (
-              <Col key={i} md={4} className="project-card">
-                <ProjectCard
-                  headerIcon={meta.icon}
-                  headerColor={meta.color}
-                  title={t.cards[i].title}
-                  description={t.cards[i].description}
-                  ghLink={meta.ghLink}
-                  demoLink={meta.demoLink}
-                  techStack={meta.techStack}
-                />
-              </Col>
-            ))}
-          </Row>
-        ) : (
-          <div className="project-list">
-            {PROJECT_META.map((meta, i) => (
-              <div key={i} className="project-list-item">
-                <div
-                  className="project-list-icon"
-                  style={{ background: meta.color }}
-                >
-                  {meta.icon}
-                </div>
-                <div className="project-list-body">
-                  <h5 className="project-list-title">{t.cards[i].title}</h5>
-                  <p className="project-list-desc">{t.cards[i].description}</p>
-                  <div className="project-tech-stack">
-                    {meta.techStack.map((tech) => (
-                      <span key={tech} className="tech-badge">{tech}</span>
-                    ))}
+            <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+              {PROJECT_META.map((meta, i) => (
+                <Col key={i} md={4} className="project-card">
+                  <ProjectCard
+                    headerIcon={meta.icon}
+                    headerColor={meta.color}
+                    title={t.cards[i].title}
+                    description={t.cards[i].description}
+                    ghLink={meta.ghLink}
+                    demoLink={meta.demoLink}
+                    techStack={meta.techStack}
+                  />
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <div className="project-list">
+              {PROJECT_META.map((meta, i) => (
+                <div key={i} className="project-list-item">
+                  <div
+                    className="project-list-icon"
+                    style={{ background: meta.color }}
+                  >
+                    {meta.icon}
                   </div>
-                </div>
-                {(meta.ghLink || meta.demoLink) && (
-                  <div className="project-list-actions" style={{ display: "flex", gap: "10px" }}>
-                    {meta.ghLink && (
-                      <Button
-                        className="project-card-buttons"
-                        variant="primary"
-                        href={meta.ghLink}
-                        target="_blank"
-                      >
-                        <BsGithub /> &nbsp; GitHub
-                      </Button>
-                    )}
-                    {meta.demoLink && (
-                      <Button
-                        className="project-card-buttons"
-                        variant="primary"
-                        href={meta.demoLink}
-                        target="_blank"
-                      >
-                        <CgWebsite /> &nbsp; Demo
-                      </Button>
-                    )}
+                  <div className="project-list-body">
+                    <h5 className="project-list-title">{t.cards[i].title}</h5>
+                    <p className="project-list-desc">{t.cards[i].description}</p>
+                    <div className="project-tech-stack">
+                      {meta.techStack.map((tech) => (
+                        <span key={tech} className="tech-badge">{tech}</span>
+                      ))}
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+                  {(meta.ghLink || meta.demoLink) && (
+                    <div className="project-list-actions" style={{ display: "flex", gap: "10px" }}>
+                      {meta.ghLink && (
+                        <Button
+                          className="project-card-buttons"
+                          variant="primary"
+                          href={meta.ghLink}
+                          target="_blank"
+                        >
+                          <BsGithub /> &nbsp; GitHub
+                        </Button>
+                      )}
+                      {meta.demoLink && (
+                        <Button
+                          className="project-card-buttons"
+                          variant="primary"
+                          href={meta.demoLink}
+                          target="_blank"
+                        >
+                          <CgWebsite /> &nbsp; Demo
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </Reveal>
       </Container>
     </Container>

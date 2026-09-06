@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
+import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import Certifications from "./components/Certifications/Certifications";
 import Resume from "./components/Resume/ResumeNew";
@@ -51,8 +52,9 @@ function App() {
             toggleLang={toggleLang}
           />
           <main className="flex-grow-1">
-            <Home />
             <About />
+            <Skills />
+            <Experience />
             <Projects />
             <Certifications />
             <Resume />

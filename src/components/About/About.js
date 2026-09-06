@@ -1,18 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Reveal from "../Reveal/Reveal";
-import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
+import Type from "./Type";
+import avatarImg from "../../Assets/avatar_new.png";
+import homeImg from "../../Assets/home_main_img.png";
 import Tilt from "react-parallax-tilt";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
-import Github from "./Github";
 
 function About() {
   const lang = useLang();
   const t = translations[lang].about;
+  const home = translations[lang].home;
 
   return (
     <Container fluid className="about-section" id="about">
@@ -31,6 +31,19 @@ function About() {
                 {t.title}{" "}
                 <strong className="accent">{t.titlePurple}</strong>
               </h1>
+
+              <div className="home-header" style={{ textAlign: "left" }}>
+                <h1 style={{ fontSize: "2.4em" }}>
+                  {home.greeting}{" "}
+                  <span className="wave" role="img" aria-labelledby="wave">
+                    👋🏻
+                  </span>
+                </h1>
+                <div style={{ fontSize: "1.2em", marginBottom: "20px" }}>
+                  <Type />
+                </div>
+              </div>
+
               <Aboutcard />
             </Col>
             <Col
@@ -39,29 +52,14 @@ function About() {
               className="about-img"
             >
               <Tilt>
-                <img src={laptopImg} alt="about" className="img-fluid" />
+                <img src={avatarImg} alt="avatar" className="img-fluid" />
+              </Tilt>
+              <Tilt>
+                <img src={homeImg} alt="avatar alt" className="img-fluid about-img-alt" />
               </Tilt>
             </Col>
           </Row>
         </Reveal>
-
-        <Reveal>
-          <h1 className="project-heading">
-            {t.skillsTitle}{" "}
-            <strong className="accent">{t.skillsTitlePurple} </strong>
-          </h1>
-          <Techstack />
-        </Reveal>
-
-        <Reveal>
-          <h1 className="project-heading">
-            <strong className="accent">{t.toolsTitle}</strong>{" "}
-            {t.toolsTitlePurple}
-          </h1>
-          <Toolstack />
-        </Reveal>
-
-        <Github />
       </Container>
     </Container>
   );

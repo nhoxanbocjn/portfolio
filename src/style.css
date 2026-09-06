@@ -721,6 +721,17 @@ button:focus {
   }
 }
 
+.about-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  border-radius: 12px;
+}
+
+.about-img .about-img-alt {
+  margin-top: 12px !important;
+}
+
 .tech-icons {
   display: flex !important;
   align-self: center !important;
@@ -1750,4 +1761,102 @@ button:focus {
   .chatbot-panel {
     width: calc(100vw - 32px) !important;
   }
+}
+
+/* ============================================================
+   About (merged Home hero)
+   ============================================================ */
+.about-img-alt {
+  margin-top: 20px !important;
+}
+
+/* ============================================================
+   Skills
+   ============================================================ */
+.skills-section {
+  position: relative !important;
+  padding-top: 60px !important;
+  padding-bottom: 30px !important;
+  background-color: var(--bg-soft) !important;
+  color: var(--text) !important;
+}
+
+/* ============================================================
+   Experience
+   ============================================================ */
+.exp-section {
+  position: relative !important;
+  padding-top: 60px !important;
+  padding-bottom: 70px !important;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.exp-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background-color: var(--surface);
+  padding: 24px 26px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.exp-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.exp-card-title {
+  font-size: 1.35em;
+  margin: 0 0 2px;
+  color: var(--accent);
+}
+
+.exp-card-company {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.exp-card-period {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.exp-card-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-group-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.exp-group-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.exp-group-list li {
+  margin-bottom: 4px;
 }

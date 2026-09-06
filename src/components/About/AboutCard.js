@@ -13,25 +13,25 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            {t.greeting}{" "}
-            <span className="accent">Nguyen Le</span> {t.from}{" "}
-            <span className="accent">Ho Chi Minh City, Vietnam</span>.
-            <br />
-            {t.workPrefix}{" "}
-            <span className="accent">{t.workRole}</span> {t.workAt}{" "}
-            <span className="accent">ShopeePay</span>
-            {t.workSuffixPre}{" "}
-            <span className="accent">Data Engineer</span>{" "}
-            {t.workSuffixPost}
-            <br />
+            {t.intro}
+          </p>
+
+          <p style={{ textAlign: "justify" }}>
+            {t.rolePrefix}{" "}
+            <span className="accent">{t.role}</span> {t.roleAt}{" "}
+            <span className="accent">{t.company}</span> {t.roleSuffix}{" "}
+            {t.skillsPrefix}{" "}
+            <span className="accent">{t.skillsBold}</span> {t.skillsSuffix}
+          </p>
+
+          <p style={{ textAlign: "justify" }}>
             {t.eduPrefix}{" "}
             <span className="accent">{t.eduDegree}</span> {t.eduFrom}{" "}
             <span className="accent">{t.eduSchool}</span> — GPA:{" "}
             <span className="accent">{t.gpa}</span>.
-            <br />
-            <br />
-            {t.hobbiesIntro}
           </p>
+
+          <p>{t.hobbiesIntro}</p>
 
           <ul>
             {t.hobbies.map((hobby, i) => (

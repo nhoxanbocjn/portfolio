@@ -62,7 +62,7 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
       className={scrolled ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="#home" className="d-flex align-items-center">
+        <Navbar.Brand href="#about" className="d-flex align-items-center">
           <span className="prompt">~ </span>
           <span>
             <TypingText text="nguy3n_l3" />

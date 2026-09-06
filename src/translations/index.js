@@ -1,8 +1,9 @@
 const translations = {
   en: {
     nav: {
-      home: "Home",
       about: "About",
+      skills: "Skills",
+      experience: "Experience",
       projects: "Projects",
       resume: "Resume",
       certifications: "Certifications",
@@ -18,24 +19,6 @@ const translations = {
       connectBold: "connect",
       connectSuffix: "with me"
     },
-    home2: {
-      headingPre: "LET ME",
-      headingPurple: "INTRODUCE",
-      headingPost: "MYSELF",
-      intro: "I'm a Data Engineer & Analyst passionate about building reliable data infrastructure — designing pipelines that turn raw, messy data into trusted, decision-ready datasets.",
-      skillsPrefix: "I'm proficient in",
-      skillsBold: "SQL, Python, Airflow, and dbt",
-      skillsSuffix: "— engineering scalable ELT/ETL pipelines, data warehouses, and automated workflows.",
-      interestsPrefix: "My core focus is",
-      interestsBold: "Data Engineering",
-      interestsSuffix: "— orchestrating production-grade, observable pipelines with tools like",
-      currentPrefix: "Currently a",
-      currentRole: "Data Analyst",
-      currentAt: "at",
-      currentCompany: "ShopeePay - Digital Wallet",
-      currentSuffixPre: ", but passionate about becoming a",
-      currentSuffixPost: "in the future."
-    },
     about: {
       title: "Know Who",
       titlePurple: "I'M",
@@ -44,16 +27,18 @@ const translations = {
       toolsTitle: "Tools",
       toolsTitlePurple: "I use",
       bio: {
-        greeting: "Hi everyone! I'm",
-        from: "from",
-        workPrefix: "I'm currently working as a",
-        workRole: "Data Analyst",
-        workAt: "at",
-        workSuffixPre: ", but passionate about becoming a",
-        workSuffixPost: "in the future.",
-        eduPrefix: "I hold a Bachelor of",
+        intro: "I'm Nguyen Le, a Data Engineer & Analyst from Ho Chi Minh City, Vietnam. I build reliable data infrastructure — turning raw, messy data into trusted, decision-ready datasets.",
+        rolePrefix: "Currently a",
+        role: "Data Analyst",
+        roleAt: "at",
+        company: "ShopeePay",
+        roleSuffix: "— on track toward a Data Engineer path.",
+        skillsPrefix: "Proficient in",
+        skillsBold: "SQL, Python, Airflow, and dbt",
+        skillsSuffix: "for scalable ELT/ETL pipelines, data warehouses, and automated workflows.",
+        eduPrefix: "Bachelor of",
         eduDegree: "Management Information System",
-        eduFrom: "from",
+        eduFrom: "at",
         eduSchool: "University of Economics Ho Chi Minh City (UEH)",
         gpa: "3.73 / 4.0",
         hobbiesIntro: "Outside of work, I love activities that keep me sharp and curious:",
@@ -69,6 +54,77 @@ const translations = {
     github: {
       headingPre: "Days I",
       headingAccent: "Code"
+    },
+    skills: {
+      heading: "My",
+      headingAccent: "Skillset"
+    },
+    experience: {
+      heading: "Professional",
+      headingAccent: "Experience",
+      jobs: [
+        {
+          title: "Data Analyst / Engineer",
+          company: "ShopeePay - Digital Wallet",
+          period: "Apr 2025 - Present",
+          groups: [
+            {
+              title: "Automation Task",
+              items: [
+                "Automate daily data pipelines to refresh activation users, orders, and user patterns across platforms.",
+                "Developed a Looker dashboard to monitor daily traffic performance, enabling tracking of trends and optimization of plans.",
+                "Implemented a performance tracking module to monitor product user activation.",
+              ],
+            },
+            {
+              title: "Bot Alert",
+              items: [
+                "Built a bot to send user lists to operations teams for CS/CX survey setup.",
+                "Implemented voucher usage alerts via chat platform APIs, notifying teams when quota thresholds are reached.",
+              ],
+            },
+            {
+              title: "Data Analysis",
+              items: [
+                "Applied customer segmentation to analyze purchasing behavior and target vouchers, driving a 10% increase in orders.",
+                "Conducted data analysis and executed A/B testing on new features to increase 15% user traffic.",
+                "Identified user journey bottlenecks through data and recommended improvements to enhance user experience.",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Data Engineer",
+          company: "ANOVA - Ecommerce Seller on Amazon",
+          period: "Jun 2024 - Mar 2025",
+          groups: [
+            {
+              title: "Preprocessing Data in PostgreSQL",
+              items: [
+                "Prepared and cleaned large datasets (8-10 million records), ensuring data consistency before loading into BI tools.",
+                "Optimized PostgreSQL queries using indexes and materialized views, reducing execution time by 60%.",
+                "Automated data pushes to Google Sheets using the GSpread library, reducing manual processing time by 50%.",
+              ],
+            },
+            {
+              title: "Competitor Tracking API",
+              items: [
+                "Built data pipelines to ingest competitor pricing and promotion data from external APIs (Helium, Jungle Scout).",
+                "Designed data models enabling continuous tracking and competitive intelligence.",
+                "Delivered structured datasets powering analytics and decision-making systems after transformation by dbt.",
+              ],
+            },
+            {
+              title: "Sales Performance Data",
+              items: [
+                "Utilized advanced SQL techniques, including CTEs and window functions, to efficiently process and extract data.",
+                "Optimized queries for performance and high-frequency updates using techniques like indexing and creating views.",
+                "Built a dedicated KPI Management Module to measure sales metrics (revenue, ads spend, ACOS, TACOS, CR...).",
+              ],
+            },
+          ],
+        },
+      ],
     },
     projects: {
       heading: "My Recent",
@@ -160,8 +216,9 @@ const translations = {
 
   vi: {
     nav: {
-      home: "Trang chủ",
       about: "Giới thiệu",
+      skills: "Kỹ năng",
+      experience: "Kinh nghiệm",
       projects: "Dự án",
       resume: "Hồ sơ",
       certifications: "Chứng chỉ",
@@ -177,24 +234,6 @@ const translations = {
       connectBold: "kết nối",
       connectSuffix: "với tôi"
     },
-    home2: {
-      headingPre: "HÃY ĐỂ TÔI",
-      headingPurple: "GIỚI THIỆU",
-      headingPost: "BẢN THÂN",
-      intro: "Tôi là Data Engineer & Analyst, đam mê xây dựng hạ tầng dữ liệu đáng tin cậy — thiết kế pipeline biến dữ liệu thô, lộn xộn thành tập dữ liệu sạch, sẵn sàng cho quyết định.",
-      skillsPrefix: "Tôi thành thạo",
-      skillsBold: "SQL, Python, Airflow và dbt",
-      skillsSuffix: "— xây dựng pipeline ELT/ETL có khả năng mở rộng, data warehouse và quy trình tự động hóa.",
-      interestsPrefix: "Trọng tâm cốt lõi của tôi là",
-      interestsBold: "Kỹ thuật dữ liệu",
-      interestsSuffix: "— điều phối các pipeline production-grade, có khả năng quan sát với các công cụ như",
-      currentPrefix: "Hiện đang là",
-      currentRole: "Data Analyst",
-      currentAt: "tại",
-      currentCompany: "ShopeePay - Ví điện tử",
-      currentSuffixPre: ", nhưng đam mê trở thành",
-      currentSuffixPost: "trong tương lai."
-    },
     about: {
       title: "Tìm hiểu về",
       titlePurple: "TÔI",
@@ -203,14 +242,16 @@ const translations = {
       toolsTitle: "Công cụ",
       toolsTitlePurple: "Tôi dùng",
       bio: {
-        greeting: "Xin chào! Tôi là",
-        from: "đến từ",
-        workPrefix: "Hiện tôi đang là",
-        workRole: "Data Analyst",
-        workAt: "tại",
-        workSuffixPre: ", nhưng đam mê trở thành",
-        workSuffixPost: "trong tương lai.",
-        eduPrefix: "Tôi tốt nghiệp Cử nhân",
+        intro: "Tôi là Nguyên Lê, Data Engineer & Analyst đến từ TP.HCM, Việt Nam. Tôi xây dựng hạ tầng dữ liệu đáng tin cậy — biến dữ liệu thô, lộn xộn thành tập dữ liệu sạch, sẵn sàng cho quyết định.",
+        rolePrefix: "Hiện đang là",
+        role: "Data Analyst",
+        roleAt: "tại",
+        company: "ShopeePay",
+        roleSuffix: "— theo đuổi con đường trở thành Data Engineer.",
+        skillsPrefix: "Tôi thành thạo",
+        skillsBold: "SQL, Python, Airflow và dbt",
+        skillsSuffix: "để xây dựng pipeline ELT/ETL mở rộng, kho dữ liệu và quy trình tự động hóa.",
+        eduPrefix: "Cử nhân",
         eduDegree: "Hệ thống Thông tin Quản lý",
         eduFrom: "tại",
         eduSchool: "Đại học Kinh tế TP.HCM (UEH)",
@@ -228,6 +269,77 @@ const translations = {
     github: {
       headingPre: "Những ngày tôi",
       headingAccent: "Lập trình"
+    },
+    skills: {
+      heading: "Kỹ năng",
+      headingAccent: "của tôi"
+    },
+    experience: {
+      heading: "Kinh nghiệm",
+      headingAccent: "chuyên môn",
+      jobs: [
+        {
+          title: "Data Analyst / Engineer",
+          company: "ShopeePay - Ví điện tử",
+          period: "T4 2025 - Hiện tại",
+          groups: [
+            {
+              title: "Tự động hóa",
+              items: [
+                "Tự động hóa pipeline dữ liệu hàng ngày để cập nhật user kích hoạt, đơn hàng và hành vi người dùng trên các nền tảng.",
+                "Xây dựng dashboard Looker theo dõi hiệu suất traffic hàng ngày, giúp nắm bắt xu hướng và tối ưu kế hoạch.",
+                "Triển khai module theo dõi hiệu suất để giám sát quá trình kích hoạt sản phẩm của người dùng.",
+              ],
+            },
+            {
+              title: "Bot cảnh báo",
+              items: [
+                "Xây dựng bot gửi danh sách người dùng cho đội vận hành để thiết lập khảo sát CS/CX.",
+                "Triển khai cảnh báo lượng voucher qua API nền tảng chat, thông báo khi chạm ngưỡng hạn mức.",
+              ],
+            },
+            {
+              title: "Phân tích dữ liệu",
+              items: [
+                "Áp dụng phân khúc khách hàng để phân tích hành vi mua sắm và nhắm mục tiêu voucher, tăng 10% số đơn hàng.",
+                "Thực hiện phân tích dữ liệu và A/B testing trên tính năng mới để tăng 15% traffic người dùng.",
+                "Phát hiện điểm nghẽn trong hành trình người dùng bằng dữ liệu và đề xuất cải thiện trải nghiệm.",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Data Engineer",
+          company: "ANOVA - Người bán Ecommerce trên Amazon",
+          period: "T6 2024 - T3 2025",
+          groups: [
+            {
+              title: "Xử lý dữ liệu trong PostgreSQL",
+              items: [
+                "Chuẩn bị và làm sạch tập dữ liệu lớn (8-10 triệu bản ghi), đảm bảo tính nhất quán trước khi nạp vào công cụ BI.",
+                "Tối ưu truy vấn PostgreSQL bằng index và materialized view, giảm 60% thời gian thực thi.",
+                "Tự động đẩy dữ liệu lên Google Sheets bằng thư viện GSpread, giảm 50% thời gian xử lý thủ công.",
+              ],
+            },
+            {
+              title: "API theo dõi đối thủ",
+              items: [
+                "Xây dựng pipeline nạp dữ liệu giá và khuyến mãi của đối thủ từ API bên ngoài (Helium, Jungle Scout).",
+                "Thiết kế mô hình dữ liệu đảm bảo theo dõi liên tục và tình báo cạnh tranh.",
+                "Cung cấp tập dữ liệu có cấu trúc phục vụ phân tích và hệ thống ra quyết định sau khi chuyển đổi bằng dbt.",
+              ],
+            },
+            {
+              title: "Dữ liệu hiệu suất bán hàng",
+              items: [
+                "Sử dụng kỹ thuật SQL nâng cao như CTE và window functions để xử lý và trích xuất dữ liệu hiệu quả.",
+                "Tối ưu truy vấn cho hiệu suất và cập nhật tần suất cao bằng kỹ thuật như index, tạo view.",
+                "Xây dựng module quản lý KPI chuyên dụng để đo lường các chỉ số bán hàng (doanh thu, chi phí quảng cáo, ACOS, TACOS, CR...).",
+              ],
+            },
+          ],
+        },
+      ],
     },
     projects: {
       heading: "Dự án",
