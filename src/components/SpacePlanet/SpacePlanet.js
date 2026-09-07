@@ -31,13 +31,13 @@ const PLANETS = {
 };
 
 const LANDMARKS = {
-  about: { img: hoiAn, effect: "hoian" },
-  skills: { img: eiffel, effect: "eiffel" },
-  experience: { img: bigBen, effect: "bigben" },
-  projects: { img: matterhorn, effect: "matterhorn" },
-  certifications: { img: windmill, effect: "windmill" },
-  resume: { img: pisa, effect: "pisa" },
-  knowledge: { img: pyramid, effect: "pyramid" },
+  about: { img: hoiAn, effect: "hoian", aspect: 1 },
+  skills: { img: eiffel, effect: "eiffel", aspect: 450 / 640 },
+  experience: { img: bigBen, effect: "bigben", aspect: 450 / 640 },
+  projects: { img: matterhorn, effect: "matterhorn", aspect: 1 },
+  certifications: { img: windmill, effect: "windmill", aspect: 640 / 533 },
+  resume: { img: pisa, effect: "pisa", aspect: 1 },
+  knowledge: { img: pyramid, effect: "pyramid", aspect: 640 / 500 },
 };
 
 const PARALLAX = 0.06;
@@ -74,7 +74,17 @@ function SpacePlanet({ version = "planet" }) {
   return (
     <div className={`space-planet space-planet--${version}`} ref={wrapRef} aria-hidden="true">
       <div className="space-planet-inner">
-        <img key={item.effect} src={item.img} alt="" className={`space-planet-img img-${item.effect}`} />
+        {version === "landmark" ? (
+          <img
+            key={item.effect}
+            src={item.img}
+            alt=""
+            className={`space-planet-frame-img img-${item.effect}`}
+            style={{ aspectRatio: `${item.aspect.toFixed(4)} / 1` }}
+          />
+        ) : (
+          <img key={item.effect} src={item.img} alt="" className={`space-planet-img img-${item.effect}`} />
+        )}
         <span className="space-planet-label">{labels[active]}</span>
       </div>
     </div>

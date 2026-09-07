@@ -1587,12 +1587,15 @@ button:focus {
     planet-spin 80s linear infinite;
 }
 
-.space-planet--landmark .space-planet-img {
-  border-radius: 50%;
+.space-planet-frame-img {
+  width: clamp(140px, 18vw, 200px);
+  height: auto;
   object-fit: cover;
-  filter: drop-shadow(0 0 24px rgba(255, 201, 64, 0.18));
-  animation: planet-in 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    planet-spin 80s linear infinite;
+  border-radius: 14px;
+  background: transparent;
+  border: none;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.4));
+  animation: planet-in 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .space-planet-label {
