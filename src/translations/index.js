@@ -128,7 +128,7 @@ const translations = {
     },
     projects: {
       heading: "My Recent",
-      headingPurple: "Works",
+      headingPurple: "Projects",
       subtext: "Here are a few projects I've worked on recently.",
       cards: [
         {
@@ -200,8 +200,8 @@ const translations = {
     blogCta: {
       heading: "Fresh From My",
       headingAccent: "Notes",
-      subtitle: "I write about data engineering, analytics, and the lessons learned along the way — read the full posts on my blog.",
-      cta: "Visit the Blog"
+      subtitle: "I write about anything of my journey in data engineering, analytics, and lessons learned — read the full here",
+      cta: "Visit My Notes"
     },
     chatbot: {
       title: "Ask about Nguyen Le",
@@ -415,8 +415,9 @@ const translations = {
     blogCta: {
       heading: "Những",
       headingAccent: "Ghi chú",
-      subtitle: "Tôi viết về kỹ thuật dữ liệu, phân tích và những bài học rút ra trên hành trình — đọc bài viết đầy đủ trên blog của tôi.",
-      cta: "Xem Blog"
+      subtitle: "Tôi viết về những hành trình, trải nghiệm và bài học của mình trong lĩnh vực Data Engineering, Analytics — đọc toàn bộ bài viết tại đây.",
+
+      cta: "Xem Ghi Chú"
     },
     chatbot: {
       title: "Ask about Nguyen Le",

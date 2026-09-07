@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -21,29 +20,25 @@ function Footer() {
 
   return (
     <footer className="footer-wrap">
-      <Container fluid className="footer">
-        <Row>
-          <Col md="4" className="footer-copywright">
-            <h3>{t.designed}</h3>
-          </Col>
-          <Col md="4" className="footer-copywright">
-            <h3>
-              {t.copyright} {year} {t.name}
-            </h3>
-          </Col>
-          <Col md="4" className="footer-body">
-            <ul className="footer-icons">
-              {SOCIAL_LINKS.map(({ href, Icon, label }) => (
-                <li key={label} className="social-icons">
-                  <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
-                    <Icon />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
-      </Container>
+      <div className="footer">
+        <div className="footer-group">
+          <span className="footer-text">{t.designed}</span>
+          <span className="footer-sep">•</span>
+          <span className="footer-text">
+            {t.copyright} {year} {t.name}
+          </span>
+          <span className="footer-sep">•</span>
+          <ul className="footer-icons">
+            {SOCIAL_LINKS.map(({ href, Icon, label }) => (
+              <li key={label} className="social-icons">
+                <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                  <Icon />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </footer>
   );
 }

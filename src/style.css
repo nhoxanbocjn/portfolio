@@ -724,7 +724,7 @@ button:focus {
 .about-img img {
   display: block;
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 65%;
   border-radius: 12px;
 }
 
@@ -1496,34 +1496,36 @@ button:focus {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
   padding-top: 8px !important;
   padding-bottom: 8px !important;
 }
 
-.footer-copywright {
-  text-align: center !important;
+.footer-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px;
 }
 
-.footer-body {
-  z-index: 1;
-  text-align: center !important;
-}
-
-@media (max-width: 767px) {
-  .footer-copywright {
-    text-align: center !important;
-  }
-
-  .footer-body {
-    text-align: center !important;
-  }
-}
-
-.footer h3 {
+.footer-text {
   font-size: 0.95rem;
   color: var(--text) !important;
-  margin: 0 !important;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+.footer-sep {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 575px) {
+  .footer-group {
+    gap: 8px;
+  }
 }
 
 .footer-icons {
@@ -1542,7 +1544,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   padding: 6px;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 

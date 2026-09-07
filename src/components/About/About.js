@@ -33,15 +33,16 @@ function About() {
               </h1>
 
               <div className="home-header" style={{ textAlign: "left" }}>
+                <div style={{ fontSize: "1.2em", marginBottom: "20px" }}>
+                  <Type />
+                </div>
                 <h1 style={{ fontSize: "2.4em" }}>
                   {home.greeting}{" "}
                   <span className="wave" role="img" aria-labelledby="wave">
                     👋🏻
                   </span>
                 </h1>
-                <div style={{ fontSize: "1.2em", marginBottom: "20px" }}>
-                  <Type />
-                </div>
+
               </div>
 
               <Aboutcard />
