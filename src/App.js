@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import SideNav from "./components/SideNav/SideNav";
 import BackToTop from "./components/BackToTop/BackToTop";
 import Chatbot from "./components/Chatbot/Chatbot";
+import SpacePlanet from "./components/SpacePlanet/SpacePlanet";
 import { ThemeContext } from "./context/ThemeContext";
 import { LangContext } from "./context/LangContext";
 import "./style.css";
@@ -23,6 +24,9 @@ function App() {
   );
   const [lang, setLang] = useState(
     () => localStorage.getItem("lang") || "en"
+  );
+  const [version, setVersion] = useState(
+    () => localStorage.getItem("spaceVersion") || "planet"
   );
 
   useEffect(() => {
@@ -41,6 +45,12 @@ function App() {
     localStorage.setItem("lang", next);
   };
 
+  const toggleVersion = () => {
+    const next = version === "planet" ? "landmark" : "planet";
+    setVersion(next);
+    localStorage.setItem("spaceVersion", next);
+  };
+
   return (
     <ThemeContext.Provider value={theme}>
       <LangContext.Provider value={lang}>
@@ -50,6 +60,8 @@ function App() {
             toggleTheme={toggleTheme}
             lang={lang}
             toggleLang={toggleLang}
+            version={version}
+            toggleVersion={toggleVersion}
           />
           <main className="flex-grow-1">
             <About />
@@ -64,6 +76,7 @@ function App() {
           <SideNav />
           <BackToTop />
           <Chatbot />
+          <SpacePlanet version={version} />
         </div>
       </LangContext.Provider>
     </ThemeContext.Provider>

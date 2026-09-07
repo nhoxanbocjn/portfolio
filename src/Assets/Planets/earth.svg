@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="ocean" cx="35%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#8fd0ff"/>
+      <stop offset="55%" stop-color="#1e63d2"/>
+      <stop offset="100%" stop-color="#0a2a6b"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#ocean)"/>
+  <g fill="#2f9e44" opacity="0.9">
+    <path d="M28 74 q22 -20 52 -8 q16 -22 42 -14 q28 12 48 36 q-16 30 -46 28 q-30 10 -62 -8 q-24 -12 -34 -34z"/>
+    <path d="M70 132 q18 8 38 2 q10 14 30 10 q14 10 34 4 q-12 22 -40 22 q-30 0 -62 -16z"/>
+  </g>
+</svg>

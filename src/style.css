@@ -1558,6 +1558,126 @@ button:focus {
 }
 
 /* ============================================================
+   Space planet (fixed morphing planet, right side)
+   ============================================================ */
+.space-planet {
+  position: fixed;
+  right: 36px;
+  top: 50%;
+  transform: translateY(calc(-50% + var(--drift, 0px)));
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.space-planet-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: planet-float 6s ease-in-out infinite;
+}
+
+.space-planet-img {
+  width: clamp(120px, 17vw, 210px);
+  height: clamp(120px, 17vw, 210px);
+  border-radius: 50%;
+  background: var(--bg);
+  filter: drop-shadow(0 0 26px rgba(34, 211, 238, 0.22));
+  animation: planet-in 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    planet-spin 80s linear infinite;
+}
+
+.space-planet--landmark .space-planet-img {
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 24px rgba(255, 201, 64, 0.18));
+  animation: planet-in 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    planet-spin 80s linear infinite;
+}
+
+.space-planet-label {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+.space-planet--landmark .space-planet-label {
+  font-size: 0.66rem;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.img-sun {
+  filter: drop-shadow(0 0 34px rgba(255, 201, 64, 0.4));
+}
+
+.img-jupiter {
+  filter: drop-shadow(0 0 26px rgba(255, 194, 61, 0.2));
+}
+
+.img-mars {
+  filter: drop-shadow(0 0 26px rgba(255, 112, 74, 0.22));
+}
+
+.img-saturn {
+  filter: drop-shadow(0 0 26px rgba(240, 210, 157, 0.2));
+}
+
+.img-mercury {
+  filter: drop-shadow(0 0 22px rgba(170, 183, 197, 0.18));
+}
+
+.img-neptune {
+  filter: drop-shadow(0 0 26px rgba(87, 155, 255, 0.24));
+}
+
+@keyframes planet-float {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes planet-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes planet-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 991px) {
+  .space-planet {
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .space-planet {
+    display: none;
+  }
+}
+
+/* ============================================================
    Chatbot
    ============================================================ */
 .chatbot-wrapper {

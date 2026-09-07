@@ -9,7 +9,9 @@ const translations = {
       certifications: "Certifications",
       knowledge: "Knowledge",
       theme: "Theme",
-      language: "Language"
+      language: "Language",
+      spaceVersionPlanet: "Planets",
+      spaceVersionLandmark: "Landmarks"
     },
     home: {
       greeting: "Hi There!",
@@ -18,6 +20,24 @@ const translations = {
       connectPrefix: "Feel free to",
       connectBold: "connect",
       connectSuffix: "with me"
+    },
+    planet: {
+      about: "Sun",
+      skills: "Mercury",
+      experience: "Earth",
+      projects: "Mars",
+      certifications: "Jupiter",
+      resume: "Saturn",
+      knowledge: "Neptune"
+    },
+    landmark: {
+      about: "Vietnam - Hoi An",
+      skills: "France - Eiffel Tower",
+      experience: "England - Big Ben",
+      projects: "Switzerland - Matterhorn",
+      certifications: "Netherlands - Windmill",
+      resume: "Italy - Pisa Tower",
+      knowledge: "Egypt - Pyramids"
     },
     about: {
       title: "Know Who",
@@ -224,7 +244,9 @@ const translations = {
       certifications: "Chứng chỉ",
       knowledge: "Kiến thức",
       theme: "Giao diện",
-      language: "Ngôn ngữ"
+      language: "Ngôn ngữ",
+      spaceVersionPlanet: "Hành tinh",
+      spaceVersionLandmark: "Địa danh"
     },
     home: {
       greeting: "Xin chào!",
@@ -233,6 +255,24 @@ const translations = {
       connectPrefix: "Hãy thoải mái",
       connectBold: "kết nối",
       connectSuffix: "với tôi"
+    },
+    planet: {
+      about: "Mặt Trời",
+      skills: "Sao Thủy",
+      experience: "Trái Đất",
+      projects: "Sao Hỏa",
+      certifications: "Sao Mộc",
+      resume: "Sao Thổ",
+      knowledge: "Sao Hải Vương"
+    },
+    landmark: {
+      about: "Việt Nam - Hội An",
+      skills: "Pháp - Tháp Eiffel",
+      experience: "Anh - Big Ben",
+      projects: "Thụy Sĩ - Núi Matterhorn",
+      certifications: "Hà Lan - Cối xay gió",
+      resume: "Ý - Tháp Pisa",
+      knowledge: "Ai Cập - Kim tự tháp"
     },
     about: {
       title: "Tìm hiểu về",

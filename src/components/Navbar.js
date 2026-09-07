@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { LuExternalLink } from "react-icons/lu";
+import { LuExternalLink, LuLandmark } from "react-icons/lu";
 import {
   PiSunDuotone,
   PiMoonDuotone,
+  PiPlanet,
 } from "react-icons/pi";
 import TypingText from "./NavType";
 import { SECTION_IDS, SECTION_NAV } from "./navSections";
@@ -13,7 +14,7 @@ import useScrollSpy from "../hooks/useScrollSpy";
 import { useLang } from "../context/LangContext";
 import translations from "../translations";
 
-function NavBar({ theme, toggleTheme, lang, toggleLang }) {
+function NavBar({ theme, toggleTheme, lang, toggleLang, version, toggleVersion }) {
   const [expand, updateExpanded] = useState(false);
   const [scrolled, updateScrolled] = useState(false);
   const active = useScrollSpy(SECTION_IDS);
@@ -95,6 +96,16 @@ function NavBar({ theme, toggleTheme, lang, toggleLang }) {
             <span className={lang === "en" ? "lang-active" : "lang-inactive"}>EN</span>
             <span className="lang-sep">|</span>
             <span className={lang === "vi" ? "lang-active" : "lang-inactive"}>VI</span>
+          </Nav.Link>
+
+          <Nav.Link
+            as="button"
+            className="control-btn control-version"
+            onClick={toggleVersion}
+            aria-label={version === "planet" ? t.spaceVersionLandmark : t.spaceVersionPlanet}
+            data-tooltip={version === "planet" ? t.spaceVersionLandmark : t.spaceVersionPlanet}
+          >
+            {version === "planet" ? <PiPlanet size={20} /> : <LuLandmark size={20} />}
           </Nav.Link>
         </div>
 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="mars" cx="35%" cy="30%" r="82%">
+      <stop offset="0%" stop-color="#ff9a6b"/>
+      <stop offset="55%" stop-color="#d9482b"/>
+      <stop offset="100%" stop-color="#781f10"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#mars)"/>
+  <circle cx="66" cy="78" r="13" fill="#6a1c0e" opacity="0.55"/>
+  <circle cx="132" cy="118" r="19" fill="#59170b" opacity="0.5"/>
+  <circle cx="96" cy="150" r="8" fill="#59170b" opacity="0.5"/>
+  <circle cx="140" cy="70" r="6" fill="#6a1c0e" opacity="0.45"/>
+  <path d="M40 62 h48 q12 8 10 18" fill="none" stroke="#ffc4a0" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M120 152 h34" fill="none" stroke="#ffc4a0" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+</svg>
