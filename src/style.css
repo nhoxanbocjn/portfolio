@@ -1985,3 +1985,120 @@ button:focus {
 .exp-group-list li {
   margin-bottom: 4px;
 }
+
+/* ============================================================
+   Mobile (phones) — static navbar, hidden extras, readable type
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Static navbar — sits in page flow, scrolls away */
+  .navbar,
+  .navbar.fixed-top,
+  .sticky {
+    position: static !important;
+  }
+
+  .navbar,
+  .navbar.sticky {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .about-section {
+    padding-top: 24px !important;
+  }
+
+  /* Hide About images + planet/landmark toggle on phones */
+  .about-img {
+    display: none !important;
+  }
+
+  .control-version {
+    display: none !important;
+  }
+
+  /* Hide project demo/github buttons on phones */
+  .project-list-actions,
+  .project-card-buttons {
+    display: none !important;
+  }
+
+  /* Readable typography */
+  .project-heading {
+    font-size: 1.55em !important;
+  }
+
+  .blog-cta-heading {
+    font-size: 1.5em !important;
+  }
+
+  .about-section h1,
+  .about-section .home-header h1 {
+    font-size: 1.45em !important;
+  }
+
+  .Typewriter__wrapper {
+    position: static !important;
+    font-size: 1.05em !important;
+  }
+
+  .Typewriter__cursor {
+    font-size: 1.1em !important;
+  }
+
+  .quote-card-view p,
+  .home-about-body {
+    font-size: 0.92rem !important;
+  }
+
+  .about-activity {
+    font-size: 0.9rem !important;
+  }
+
+  .exp-card-title {
+    font-size: 1.1em !important;
+  }
+
+  .exp-group-title {
+    font-size: 0.98em !important;
+  }
+
+  .exp-group-list li {
+    font-size: 0.9rem !important;
+  }
+
+  .project-list-title {
+    font-size: 1.05rem !important;
+  }
+
+  .project-list-desc {
+    font-size: 0.9rem !important;
+  }
+
+  .cert-row-title {
+    font-size: 0.95rem !important;
+  }
+
+  .cert-row-issuer,
+  .cert-row-time {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-heading {
+    font-size: 1.4em !important;
+  }
+
+  .blog-cta-heading {
+    font-size: 1.35em !important;
+  }
+
+  .Typewriter__wrapper {
+    position: static !important;
+    font-size: 0.95em !important;
+  }
+
+  .quote-card-view p,
+  .home-about-body {
+    font-size: 0.88rem !important;
+  }
+}
