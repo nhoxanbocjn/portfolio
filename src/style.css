@@ -1674,7 +1674,7 @@ button:focus {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .space-planet {
     display: none;
   }
@@ -1989,6 +1989,14 @@ button:focus {
 /* ============================================================
    Mobile (phones) — static navbar, hidden extras, readable type
    ============================================================ */
+@media (max-width: 1199px) {
+  /* Hide the planet/landmark toggle below desktop — the widget
+     itself is also hidden under 1200px. */
+  .control-version {
+    display: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   /* Static navbar — sits in page flow, scrolls away */
   .navbar,
@@ -2006,12 +2014,8 @@ button:focus {
     padding-top: 24px !important;
   }
 
-  /* Hide About images + planet/landmark toggle on phones */
+  /* Hide About images on phones */
   .about-img {
-    display: none !important;
-  }
-
-  .control-version {
     display: none !important;
   }
 
