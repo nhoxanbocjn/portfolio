@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
-import { LuBot, LuX, LuSend } from "react-icons/lu";
+import { LuX, LuSend, LuMessageSquare } from "react-icons/lu";
 import { useLang } from "../../context/LangContext";
 import translations from "../../translations";
+import agentIcon from "../../Assets/Chatbot/agent_support.png";
 
-const FAB_SIZE = 54;
+const FAB_SIZE = 64;
 const PANEL_W = 350;
 const PANEL_H = 600;
 const FOOTER_H = 64;
@@ -135,13 +136,13 @@ function Chatbot() {
   return (
     <div className="chatbot-wrapper" style={{ left: pos.x, top: pos.y }}>
       <button
-        className="chatbot-fab"
+        className={`chatbot-fab${isOpen ? " chatbot-fab--open" : ""}`}
         onMouseDown={onFabPointerDown}
         onTouchStart={onFabPointerDown}
         onClick={onFabClick}
         aria-label={isOpen ? t.ariaClose : t.ariaOpen}
       >
-        {isOpen ? <LuX /> : <LuBot />}
+        {isOpen ? <LuMessageSquare /> : <img src={agentIcon} alt={t.ariaOpen} className="chatbot-fab-img" />}
       </button>
 
       {isOpen && (
@@ -150,7 +151,14 @@ function Chatbot() {
           style={{ ...panelStyle, ...alignStyle, width: Math.min(PANEL_W, window.innerWidth - 16) }}
         >
           <div className="chatbot-header">
-            <span>{t.title}</span>
+            <img src={agentIcon} alt="AI" className="chatbot-avatar" />
+            <div className="chatbot-header-info">
+              <span>{t.title}</span>
+              <span className="chatbot-header-status">
+                <span className="chatbot-status-dot" />
+                {t.online}
+              </span>
+            </div>
             <button onClick={() => setIsOpen(false)} aria-label={t.ariaClose}>
               <LuX />
             </button>
@@ -166,7 +174,11 @@ function Chatbot() {
               </div>
             ))}
             {loading && (
-              <div className="chatbot-msg chatbot-msg--assistant chatbot-typing">...</div>
+              <div className="chatbot-msg chatbot-msg--assistant chatbot-typing">
+                <span />
+                <span />
+                <span />
+              </div>
             )}
             {showSuggestions && (
               <div className="chatbot-suggestions">
